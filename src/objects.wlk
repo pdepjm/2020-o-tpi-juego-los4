@@ -1,6 +1,6 @@
 import wollok.game.*
 
-class Objetos{
+class ObjetosAEsquivar{
 	
 	var posicion
 	

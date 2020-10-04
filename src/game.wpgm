@@ -1,8 +1,8 @@
 import wollok.game.*
 import pepita.*
+import juego.*
 
 program game {
-	game.title("Juego Base")
-	game.addVisual(pepita)
-	game.start()
+	game.title("NOMBRE DEL JUEGO PENDIENTE")
+	nombreDelJuego.iniciar()
 }
