@@ -1,8 +1,5 @@
-import wollok.game.*
-import pepita.*
 import juego.*
 
 program game {
-	game.title("NOMBRE DEL JUEGO PENDIENTE")
 	nombreDelJuego.iniciar()
 }
