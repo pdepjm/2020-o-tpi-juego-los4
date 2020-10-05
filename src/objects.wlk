@@ -7,7 +7,7 @@ class ObjetosAEsquivar{
 	
 	method aparecer() {
 		game.addVisual(self)
-		const x = 20 
+		const x = game.width()
 		const y = 0.randomUpTo(game.height())
 		posicion = game.at(x, y)
 	}

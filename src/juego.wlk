@@ -17,8 +17,8 @@ object nombreDelJuego {
 	}
 		
 	method aparecerObjetos(){
-		game.onTick(1000.randomUpTo(4000), "aparecer aleatoriamente", { self.crearYMoverGrande()})	
-		game.onTick(800.randomUpTo(2500), "aparecer aleatoriamente", { self.crearYMoverMediano()})
+		game.onTick(2000.randomUpTo(4000), "aparecer aleatoriamente", { self.crearYMoverGrande()})	
+		game.onTick(1000.randomUpTo(2500), "aparecer aleatoriamente", { self.crearYMoverMediano()})
 		game.onTick(400.randomUpTo(2500), "aparecer aleatoriamente", { self.crearYMoverChico()})
 	}
 
