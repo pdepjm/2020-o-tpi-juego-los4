@@ -41,7 +41,11 @@ object nombreDelJuego {
 		game.onTick(270, "moverse", {miObjeto.moverse(miObjeto.position().left(1))})
 	}
 	
-
+	method configurarTeclasPersonaje(){
+		keyboard.up().onPressDo({ personaje.moverPersonaje(personaje.position().up(1))})
+		keyboard.down().onPressDo({ personaje.moverPersonaje(personaje.position().down(1))})
+		
+	}
 
 }
 
