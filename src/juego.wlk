@@ -13,8 +13,9 @@ object nombreDelJuego {
 	method configurarJuego() {
 		game.title("NOMBRE PENDIENTE")
 		game.width(20)
-		game.height(10)
-	}
+		game.height(8)
+		game.boardGround("modeloCarretera.png") // Cuantos carriles? Cual va a ser el límite?
+	}											// Actual : ÁreaJugable: 300x1000 y Limites Arriba y Abajo (respect.): 50x1000
 		
 	method aparecerObjetos(){
 		game.onTick(2000.randomUpTo(4000), "aparecer aleatoriamente", { self.crearYMoverGrande()})	
