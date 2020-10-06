@@ -1,5 +1,15 @@
 import wollok.game.*
 
+object personaje{
+	var priority posicion = //falta cargar
+	var imagen = //falta cargar 
+	
+		
+	method moverPersonaje(posicionADondeMoverse) {
+		posicion = posicionADondeMoverse
+	}
+}
+
 class ObjetosAEsquivar{	
 	var posicion
 	
