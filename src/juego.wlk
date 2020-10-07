@@ -1,5 +1,5 @@
 import wollok.game.*
-import pepita.*
+import jugador.*
 import objects.*
 
 object nombreDelJuego {
@@ -44,7 +44,6 @@ object nombreDelJuego {
 	method configurarTeclasPersonaje(){
 		keyboard.up().onPressDo({ personaje.moverPersonaje(personaje.position().up(1))})
 		keyboard.down().onPressDo({ personaje.moverPersonaje(personaje.position().down(1))})
-		
 	}
 
 }
