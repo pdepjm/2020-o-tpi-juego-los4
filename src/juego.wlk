@@ -7,6 +7,7 @@ object nombreDelJuego {
 	method iniciar() {
 		self.configurarJuego()
 		self.aparecerObjetos()
+		self.configurarTeclasPersonaje()
 		game.start()
 	}
 	
@@ -18,6 +19,7 @@ object nombreDelJuego {
 	}											// Actual : ÁreaJugable: 300x1000 y Limites Arriba y Abajo (respect.): 50x1000
 		
 	method aparecerObjetos(){
+		game.addVisual(personaje)
 		game.onTick(2000.randomUpTo(4000), "aparecer aleatoriamente", { self.crearYMoverGrande()})	
 		game.onTick(1000.randomUpTo(2500), "aparecer aleatoriamente", { self.crearYMoverMediano()})
 		game.onTick(400.randomUpTo(2500), "aparecer aleatoriamente", { self.crearYMoverChico()})
