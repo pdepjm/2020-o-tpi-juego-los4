@@ -1,9 +1,9 @@
 import wollok.game.*
 
 object personaje{
-	var posicion = game.at(4, 2) //Falta cargar
+	var posicion = game.at(5, 2) //Falta cargar
 	
-	method image() = "placeholder_jugador.png"//Falta cargar 
+	method image() = "autopoli.png"//Falta cargar 
 	
 	method position() = posicion
 		
@@ -13,7 +13,7 @@ object personaje{
 }
 object perseguidor{
 	
-	method position() = game.at(0,personaje.position().y())
+	method position() = game.at(-1,personaje.position().y())
 	
 	method image() = "autopoli.png"
 }

@@ -13,10 +13,10 @@ object nombreDelJuego {
 	
 	method configurarJuego() {
 		game.title("NOMBRE PENDIENTE")
-		game.width(20)
-		game.height(8)
-		game.boardGround("carreteraRoja.png") // Cuantos carriles? Cual va a ser el límite?
-	}											// Actual : ÁreaJugable: 300x1000 y Limites Arriba y Abajo (respect.): 50x1000
+		game.width(15)
+		game.height(17)
+		game.boardGround("carretera1.png") // Cuantos carriles? Cual va a ser el límite?
+	}											// Actual : ÁreaJugable: 400x750 y Limites Arriba y Abajo (respect.): 50x750
 		
 	method aparecerObjetos(){
 		game.addVisual(personaje)
