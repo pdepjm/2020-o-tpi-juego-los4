@@ -1,4 +1,5 @@
 import wollok.game.*
+import jugador.*
 
 class ObjetosAEsquivar{	
 	var posicion = game.at(20, 10)
@@ -15,11 +16,14 @@ class ObjetosAEsquivar{
 	method moverse(nuevaPosicion) {
 		posicion = nuevaPosicion
 	}
+	method chocarConPersonaje(cantidadDePosiciones){
+		personaje.position().left(cantidadDePosiciones)
+	}
 }
 
 class ObjetoGrande inherits ObjetosAEsquivar {
 	method image() = "placeholder_objeto_grande.png"
-	
+		
 	method velocidad() = 450
 	
 	method chocarConJugador(){
@@ -32,9 +36,9 @@ class ObjetoMediano inherits ObjetosAEsquivar{
 
 	method velocidad() = 400
 	
-	method chocarConJugador(){	
-		// que mueva un poco al jugador y baje vida
-	}
+	method chocarConJugador(){
+		self.chocarConPersonaje(2)
+	} 
 }
 
 class ObjetoChico inherits ObjetosAEsquivar{
@@ -43,7 +47,8 @@ class ObjetoChico inherits ObjetosAEsquivar{
 	method velocidad() = 350
 	
 	method chocarConJugador(){	
-		//mueve al jugador y baja menos vida q el mediano
+		self.chocarConPersonaje(1)
 		
 	}
 }
+
