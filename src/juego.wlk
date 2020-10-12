@@ -15,7 +15,7 @@ object nombreDelJuego {
 		game.title("NOMBRE PENDIENTE")
 		game.width(15)
 		game.height(17)
-		game.boardGround("carretera1.png") // Cuantos carriles? Cual va a ser el límite?
+		game.boardGround("carretaraRoja.png") // Cuantos carriles? Cual va a ser el límite?
 	}											// Actual : ÁreaJugable: 400x750 y Limites Arriba y Abajo (respect.): 50x750
 		
 	method aparecerObjetos(){
@@ -33,8 +33,7 @@ object nombreDelJuego {
 	
 	method configurarTeclasPersonaje(){
 		keyboard.up().onPressDo({ personaje.moverPersonaje(personaje.position().up(1))})
-		keyboard.down().onPressDo({ personaje.moverPersonaje(personaje.position().down(1)})
+		keyboard.down().onPressDo({ personaje.moverPersonaje(personaje.position().down(1))})
 	}
-
 }
 
