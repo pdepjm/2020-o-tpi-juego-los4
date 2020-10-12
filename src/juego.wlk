@@ -20,6 +20,7 @@ object nombreDelJuego {
 		
 	method aparecerObjetos(){
 		game.addVisual(personaje)
+		game.addVisual(perseguidor)
 		game.onTick(1800.randomUpTo(3800), "aparecer objeto grande", {self.mover(new ObjetoGrande())})	
 		game.onTick(1000.randomUpTo(3000), "aparecer objeto mediano", {self.mover(new ObjetoMediano())})
 		game.onTick(500.randomUpTo(3000), "aparecer objeto chico", {self.mover(new ObjetoChico())})
