@@ -11,3 +11,9 @@ object personaje{
 		posicion = posicionADondeMoverse
 	}
 }
+object perseguidor{
+	
+	method position() = game.at(0,personaje.position().y())
+	
+	method image() = "autopoli.png"
+}
