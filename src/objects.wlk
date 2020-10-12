@@ -19,7 +19,7 @@ class ObjetosAEsquivar{
 	
 }
 
-class ObjetoGrande inherits ObjetosAEsquivar {
+class ObjetoGrande inherits ObjetosAEsquivar {	
 	method image() = "placeholder_objeto_grande.png"
 		
 	method velocidad() = 450

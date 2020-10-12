@@ -1,6 +1,7 @@
 import wollok.game.*
 import jugador.*
 import objects.*
+import portal.*
 
 object nombreDelJuego {
 				
@@ -15,8 +16,9 @@ object nombreDelJuego {
 		game.title("NOMBRE PENDIENTE")
 		game.width(15)
 		game.height(17)
-		game.boardGround("carretaraRoja.png") // Cuantos carriles? Cual va a ser el límite?
-	}											// Actual : ÁreaJugable: 400x750 y Limites Arriba y Abajo (respect.): 50x750
+		game.boardGround("carretera1.png") // Cuantos carriles? Cual va a ser el límite?
+	}
+									// Actual : ÁreaJugable: 400x750 y Limites Arriba y Abajo (respect.): 50x750
 		
 	method aparecerObjetos(){
 		game.addVisual(personaje)
@@ -24,6 +26,7 @@ object nombreDelJuego {
 		game.onTick(1800.randomUpTo(3800), "aparecer objeto grande", {self.mover(new ObjetoGrande())})	
 		game.onTick(1000.randomUpTo(3000), "aparecer objeto mediano", {self.mover(new ObjetoMediano())})
 		game.onTick(500.randomUpTo(3000), "aparecer objeto chico", {self.mover(new ObjetoChico())})
+		game.onTick(10000.randomUpTo(25000), "aparecer portal", {self.mover(new Portal())})
 	}
 	
 	method mover(miObjeto){
