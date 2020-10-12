@@ -16,9 +16,7 @@ class ObjetosAEsquivar{
 	method moverse(nuevaPosicion) {
 		posicion = nuevaPosicion
 	}
-	method chocarConPersonaje(cantidadDePosiciones){
-		personaje.position().left(cantidadDePosiciones)
-	}
+	
 }
 
 class ObjetoGrande inherits ObjetosAEsquivar {
@@ -37,7 +35,7 @@ class ObjetoMediano inherits ObjetosAEsquivar{
 	method velocidad() = 400
 	
 	method chocarConJugador(){
-		self.chocarConPersonaje(2)
+		personaje.moverPersonaje(personaje.position().left(2))
 	} 
 }
 
@@ -47,7 +45,7 @@ class ObjetoChico inherits ObjetosAEsquivar{
 	method velocidad() = 350
 	
 	method chocarConJugador(){	
-		self.chocarConPersonaje(1)
+		personaje.moverPersonaje(personaje.position().left(1))
 		
 	}
 }
