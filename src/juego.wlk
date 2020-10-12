@@ -29,6 +29,7 @@ object nombreDelJuego {
 	method mover(miObjeto){
 		miObjeto.aparecer()
 		game.onTick(miObjeto.velocidad(), "moverse", {miObjeto.moverse(miObjeto.position().left(1))})
+		game.onCollideDo(personaje, { visualColisionado => visualColisionado.chocarConJugador()})
 	}
 	
 	method configurarTeclasPersonaje(){
