@@ -46,7 +46,6 @@ class ObjetoChico inherits ObjetosAEsquivar{
 	
 	method chocarConJugador(){	
 		personaje.moverPersonaje(personaje.position().left(1))
-		
 	}
 }
 
