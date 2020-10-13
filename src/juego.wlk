@@ -16,7 +16,8 @@ object nombreDelJuego {
 		game.title("NOMBRE PENDIENTE")
 		game.width(15)
 		game.height(17)
-		game.boardGround("carretera1.png") // Cuantos carriles? Cual va a ser el límite?
+		game.boardGround("carretera1.png")// Cuantos carriles? Cual va a ser el límite?
+		game.showAttributes(personaje) 
 	}
 									// Actual : ÁreaJugable: 400x750 y Limites Arriba y Abajo (respect.): 50x750
 		

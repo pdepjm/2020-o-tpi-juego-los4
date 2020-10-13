@@ -16,7 +16,8 @@ class Portal inherits ObjetosAEsquivar{
 		game.removeVisual(perseguidor) /*pasar esto sin repetir código, hacer una clase para 
 										jugador y perseguidor, crear clases para las cosas a
 										* esquivar en el espacio y en juego.wlk poner un aparecerObjetos() 
-										* específico para el espacio*/
+										* específico para el espacio
+										* Hay que agregarle el metodo chocarCon para que el personaje pueda colisionar*/
 		nombreDelJuego.aparecerObjetos()
 	}
 	
