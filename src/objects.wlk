@@ -50,3 +50,14 @@ class ObjetoChico inherits ObjetosAEsquivar{
 	}
 }
 
+class Estrellas inherits ObjetosAEsquivar{
+	method image() = // por elegir
+	
+	method velocidad()= 100
+	
+	method chocarCon(jugador){
+		jugador.colleccionarEstrella()
+		game.removeVisual(self)	
+	}
+}
+
