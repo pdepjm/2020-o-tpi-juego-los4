@@ -40,7 +40,21 @@ object nombreDelJuego {
 		keyboard.down().onPressDo({ personaje.moverPersonaje(personaje.position().down(1))})
 	}
 	method configurarColisiones(){
-		game.onCollideDo(personaje, { algo => algo.teEncontro(personaje)})
+		game.onCollideDo(personaje, { algo => algo.chocarCon(personaje)})
 	}
+	
+	method perder(){
+		game.say(personaje, "mensaje sad de perdieron")
+		self.terminar()
+		}
+	
+	method ganar(){
+		game.say(personaje, "mensaje fiesta de ganaron")
+		self.terminar()
+		
+	}
+	method terminar(){
+		game.schedule(5*1000, {game.stop()})
+		}
 }
 
