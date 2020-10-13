@@ -39,5 +39,8 @@ object nombreDelJuego {
 		keyboard.up().onPressDo({ personaje.moverPersonaje(personaje.position().up(1))})
 		keyboard.down().onPressDo({ personaje.moverPersonaje(personaje.position().down(1))})
 	}
+	method configurarColisiones(){
+		game.onCollideDo(personaje, { algo => algo.teEncontro(personaje)})
+	}
 }
 
