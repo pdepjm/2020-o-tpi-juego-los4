@@ -27,6 +27,7 @@ class ObjetoGrande inherits ObjetosAEsquivar {
 	
 	method chocarCon(jugador){
 		nombreDelJuego.perder()
+		game.removeVisual(self)	
 	}	
 }
 
@@ -37,6 +38,7 @@ class ObjetoMediano inherits ObjetosAEsquivar{
 	
 	method chocarCon(jugador){
 		personaje.moverPersonaje(personaje.position().left(2))
+		game.removeVisual(self)	
 	} 
 }
 
@@ -47,10 +49,25 @@ class ObjetoChico inherits ObjetosAEsquivar{
 	
 	method chocarCon(jugador){	
 		personaje.moverPersonaje(personaje.position().left(1))
+		game.removeVisual(self)	
 	}
 }
 
-class Estrellas inherits ObjetosAEsquivar{
+class ObjetoGrandeEspacio inherits ObjetoGrande{
+	override method image() = "placeholder_objeto_chicoE.png" 
+}
+
+class ObjetoMedianoEspacio inherits ObjetoMediano{
+	override method image() = "placeholder_objeto_medianoE.png" 
+}
+
+class ObjetoChicoEspacio inherits ObjetoChico{
+	override method image() = "placeholder_objeto_grandeE.png" 
+}
+
+
+
+class Estrella inherits ObjetosAEsquivar{
 	method image() = "estrella_amarilla.png"
 	
 	method velocidad()= 100

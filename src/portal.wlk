@@ -9,16 +9,41 @@ class Portal inherits ObjetosAEsquivar{
 	
 	method image() = "portal.png"
 	
-	method cambiarNivel(){
+	method chocarCon(jugador){
 		personaje.cambiarImagen()
 		perseguidor.cambiarImagen()
-		game.removeVisual(personaje)
-		game.removeVisual(perseguidor) /*pasar esto sin repetir código, hacer una clase para 
-										jugador y perseguidor, crear clases para las cosas a
-										* esquivar en el espacio y en juego.wlk poner un aparecerObjetos() 
-										* específico para el espacio
-										* Hay que agregarle el metodo chocarCon para que el personaje pueda colisionar*/
-		nombreDelJuego.aparecerObjetos()
+		game.clear()
+		cambioDeNivel.iniciarNuevo("espacio")
 	}
-	
 }
+
+class PortalEspacio inherits Portal{
+	override method image() = "portalEspacio.png"
+	
+	override method chocarCon(jugador){
+		personaje.cambiarImagen()
+		perseguidor.cambiarImagen()
+		cambioDeNivel.iniciarNuevo("calle")
+	}
+}
+
+
+object cambioDeNivel{
+	method iniciarNuevo(nivel){
+		if (nivel == "calle"){
+			nombreDelJuego.aparecerObjetos()
+			nombreDelJuego.iniciarNivelCalle()
+			nombreDelJuego.configurarTeclasPersonaje()
+			nombreDelJuego.configurarColisiones()
+		}else if(nivel == "espacio"){
+			nombreDelJuego.aparecerObjetos()
+			nombreDelJuego.iniciarNivelEspacio()
+			nombreDelJuego.configurarTeclasPersonaje()
+			nombreDelJuego.configurarColisiones()
+		}
+	}
+}
+
+
+
+

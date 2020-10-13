@@ -3,3 +3,4 @@ import juego.*
 program game {
 	nombreDelJuego.iniciar()
 }
+
