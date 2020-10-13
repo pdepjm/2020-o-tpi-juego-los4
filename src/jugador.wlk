@@ -3,6 +3,7 @@ import wollok.game.*
 object personaje{
 	var posicion = game.at(5, 2) //Falta cargar
 	var imagen = "autopoli.png"
+	var estrellas = 0
 	
 	method cambiarImagen(){
 		if (imagen == "autopoli.png"){
@@ -17,6 +18,10 @@ object personaje{
 		
 	method moverPersonaje(posicionADondeMoverse){
 		posicion = posicionADondeMoverse
+	}
+	
+	method colleccionarEstrella(){
+		estrellas += 1
 	}
 }
 object perseguidor{
