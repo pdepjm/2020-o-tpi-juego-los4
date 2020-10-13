@@ -54,7 +54,7 @@ class ObjetoChico inherits ObjetosAEsquivar{
 }
 
 class ObjetoGrandeEspacio inherits ObjetoGrande{
-	override method image() = "placeholder_objeto_chicoE.png" 
+	override method image() = "placeholder_objeto_grandeE.png" 
 }
 
 class ObjetoMedianoEspacio inherits ObjetoMediano{
@@ -62,7 +62,7 @@ class ObjetoMedianoEspacio inherits ObjetoMediano{
 }
 
 class ObjetoChicoEspacio inherits ObjetoChico{
-	override method image() = "placeholder_objeto_grandeE.png" 
+	override method image() = "placeholder_objeto_chicoE.png" 
 }
 
 
