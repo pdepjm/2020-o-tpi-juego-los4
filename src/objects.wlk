@@ -23,7 +23,7 @@ class ObjetosAEsquivar{
 class ObjetoGrande inherits ObjetosAEsquivar {	
 	method image() = "placeholder_objeto_grande.png"
 		
-	method velocidad() = 450
+	method velocidad() = 400
 	
 	method chocarCon(jugador){
 		nombreDelJuego.perder()
@@ -34,7 +34,7 @@ class ObjetoGrande inherits ObjetosAEsquivar {
 class ObjetoMediano inherits ObjetosAEsquivar{		
 	method image() = "placeholder_objeto_mediano.png"
 
-	method velocidad() = 400
+	method velocidad() = 350
 	
 	method chocarCon(jugador){
 		personaje.moverPersonaje(personaje.position().left(2))
@@ -45,7 +45,7 @@ class ObjetoMediano inherits ObjetosAEsquivar{
 class ObjetoChico inherits ObjetosAEsquivar{
 	method image() = "placeholder_objeto_chico.png" 
 	
-	method velocidad() = 350
+	method velocidad() = 300
 	
 	method chocarCon(jugador){	
 		personaje.moverPersonaje(personaje.position().left(1))

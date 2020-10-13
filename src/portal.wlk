@@ -5,16 +5,16 @@ import juego.*
 
 class Portal inherits ObjetosAEsquivar{
 
-	method velocidad() = 600
+	method velocidad() = 200
 	
 	method image() = "portal.png"
 	
 	method chocarCon(jugador){
+		game.clear()
+		game.addVisual(fondoEspacio)	
 		personaje.cambiarImagen()
 		perseguidor.cambiarImagen()
-		game.clear()
-		cambioDeNivel.iniciarNuevo("espacio")
-		game.removeVisual(self)	
+		cambioDeNivel.cambiarANivel("espacio")
 	}
 }
 
@@ -22,24 +22,30 @@ class PortalEspacio inherits Portal{
 	override method image() = "portalEspacio.png"
 	
 	override method chocarCon(jugador){
+		game.clear()
 		personaje.cambiarImagen()
 		perseguidor.cambiarImagen()
-		game.clear()
-		cambioDeNivel.iniciarNuevo("calle")
-		game.removeVisual(self)	
+		cambioDeNivel.cambiarANivel("calle")
 	}
 }
 
 
 object cambioDeNivel{
-	method iniciarNuevo(nivel){
+	method cambiarANivel(nivel){
 		nombreDelJuego.aparecerObjetos()
-		nombreDelJuego.iniciarNivel(nivel)
 		nombreDelJuego.configurarTeclasPersonaje()
 		nombreDelJuego.configurarColisiones()
+		nombreDelJuego.iniciarNivel(nivel)
 	}
 }
 
+object fondoEspacio{
+	const posicion = game.at(0, 0)
+	
+	method position() = posicion
+	
+	method image() = "fondo_espacio.jpg"
+}
 
 
 
