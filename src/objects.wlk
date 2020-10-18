@@ -10,7 +10,7 @@ class ObjetosAEsquivar{
 	method aparecer() {
 		game.addVisual(self)
 		const x = game.width()
-		const y = 0.randomUpTo(game.height())
+		const y = 2.randomUpTo(game.height()-2) // Limite de la calle aprox 2. 
 		posicion = game.at(x, y)
 	}
 	
@@ -21,7 +21,7 @@ class ObjetosAEsquivar{
 }
 
 class ObjetoGrande inherits ObjetosAEsquivar {	
-	method image() = "placeholder_objeto_grande.png"
+	method image() = "camionBasura.png" //Podría ir cambiando al azar, muy monotomo. 
 		
 	method velocidad() = 400
 	
@@ -32,7 +32,7 @@ class ObjetoGrande inherits ObjetosAEsquivar {
 }
 
 class ObjetoMediano inherits ObjetosAEsquivar{		
-	method image() = "placeholder_objeto_mediano.png"
+	method image() = "autoPObjMediano.png" //Podría ir cambiando al azar, muy monotomo. 
 
 	method velocidad() = 350
 	
@@ -43,7 +43,7 @@ class ObjetoMediano inherits ObjetosAEsquivar{
 }
 
 class ObjetoChico inherits ObjetosAEsquivar{
-	method image() = "placeholder_objeto_chico.png" 
+	method image() = "cono.png"  //Podría ir cambiando al azar, muy monotomo. 
 	
 	method velocidad() = 300
 	

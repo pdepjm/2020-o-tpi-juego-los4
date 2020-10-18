@@ -2,14 +2,14 @@ import wollok.game.*
 
 object personaje{ // podríamos poner un nombre más representativo como jugador(? protagonista(?
 	var posicion = game.at(5, 2) //Falta cargar
-	var imagen = "autopoli.png"
+	var imagen = "autoPersonaje.png"
 	var estrellas = 0
 	
 	method cambiarImagen(){
-		if (imagen == "autopoli.png"){
+		if (imagen == "autoPersonaje.png"){
 			imagen = "nave.png"
 		}else
-			imagen = "autopoli.png"
+			imagen = "autoPersonaje.png"
 	} 
 	
 	method image() = imagen//Falta cargar 

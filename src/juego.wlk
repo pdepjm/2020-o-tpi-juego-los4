@@ -18,7 +18,7 @@ object nombreDelJuego {
 		game.title("NOMBRE PENDIENTE")
 		game.width(15)
 		game.height(17)
-		game.boardGround("carretera1.png") // Cuantos carriles? Cual va a ser el límite? 
+		game.boardGround("carretera2.png") // Cuantos carriles? Cual va a ser el límite? 
 											//Actual: ÁreaJugable: 400x750, Limites Arriba y Abajo (respect.): 50x750)
 		//game.showAttributes(personaje) //no se que es esto pero si lo descomento no anda nada
 	}
@@ -26,21 +26,21 @@ object nombreDelJuego {
 	method aparecerObjetos(){
 		game.addVisual(personaje)
 		game.addVisual(perseguidor)
-		//game.onTick(9000.randomUpTo(10000), "aparecer estrella", {self.mover(new Estrella())}) cambiar tamaño de la estrella
+		game.onTick(9000.randomUpTo(10000), "aparecer estrella", {self.mover(new Estrella())})
 	}
 	
 	method iniciarNivel(nivel){
 		if (nivel == "calle"){
-			game.onTick(1800.randomUpTo(3800), "aparecer objeto grande", {self.mover(new ObjetoGrande())})	
-			game.onTick(1000.randomUpTo(3000), "aparecer objeto mediano", {self.mover(new ObjetoMediano())})
-			game.onTick(500.randomUpTo(3000), "aparecer objeto chico", {self.mover(new ObjetoChico())})
-			game.onTick(10000.randomUpTo(15000), "aparecer portal espacio", {self.mover(new Portal())})
+			game.onTick(3200.randomUpTo(3800), "aparecer objeto grande", {self.mover(new ObjetoGrande())})	
+			game.onTick(1600.randomUpTo(3000), "aparecer objeto mediano", {self.mover(new ObjetoMediano())})
+			game.onTick(1000.randomUpTo(3000), "aparecer objeto chico", {self.mover(new ObjetoChico())})
+			game.onTick(20000.randomUpTo(15000), "aparecer portal espacio", {self.mover(new Portal())})
 		}
 		else if(nivel == "espacio") {       //esto supongo que debe hacerse separado medio repitiendo codigo xq como los objetos son una clase no se //le puede cambiar la imagen a todos como con el jugador y el perseguidor
-			game.onTick(1800.randomUpTo(3800), "aparecer objeto grande espacio", {self.mover(new ObjetoGrandeEspacio())})	
-			game.onTick(1000.randomUpTo(3000), "aparecer objeto mediano espacio", {self.mover(new ObjetoMedianoEspacio())})
-			game.onTick(500.randomUpTo(3000), "aparecer objeto chico espacio", {self.mover(new ObjetoChicoEspacio())})
-			game.onTick(10000.randomUpTo(15000), "aparecer portal espacio", {self.mover(new PortalEspacio())})
+			game.onTick(3200.randomUpTo(3800), "aparecer objeto grande espacio", {self.mover(new ObjetoGrandeEspacio())})	
+			game.onTick(1600.randomUpTo(3000), "aparecer objeto mediano espacio", {self.mover(new ObjetoMedianoEspacio())})
+			game.onTick(1000.randomUpTo(3000), "aparecer objeto chico espacio", {self.mover(new ObjetoChicoEspacio())})
+			game.onTick(20000.randomUpTo(15000), "aparecer portal espacio", {self.mover(new PortalEspacio())})
 		}
 	} 
 	
