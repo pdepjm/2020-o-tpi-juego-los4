@@ -13,6 +13,9 @@ class ObjetosAEsquivar{
 		const y = 2.randomUpTo(game.height()-2) // Limite de la calle aprox 2. 
 		posicion = game.at(x, y)
 	}
+	method desaparecer(){ // Los objetos se siguen moviendo fuera de pantalla. Llegado un punto se lagea todo, hay que eliminarlos apenas superen el límite en x.
+		
+	}
 	
 	method moverse(nuevaPosicion) {
 		posicion = nuevaPosicion
