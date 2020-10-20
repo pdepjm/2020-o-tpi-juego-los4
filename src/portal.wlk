@@ -44,7 +44,7 @@ object fondoEspacio{
 	
 	method position() = posicion
 	
-	method image() = "fondo_espacio.jpg"
+	method image() = "space.jpg"
 }
 
 

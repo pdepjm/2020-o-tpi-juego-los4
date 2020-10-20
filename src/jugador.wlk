@@ -7,7 +7,7 @@ object personaje{ // podríamos poner un nombre más representativo como jugador
 	
 	method cambiarImagen(){
 		if (imagen == "autoPersonaje.png"){
-			imagen = "nave.png"
+			imagen = "navePersonaje.png"
 		}else
 			imagen = "autoPersonaje.png"
 	} 
@@ -29,7 +29,7 @@ object perseguidor{
 	
 	method cambiarImagen(){
 		if (imagen == "autopoli.png"){
-			imagen = "nave.png"
+			imagen = "navePerseguidor.png"
 		}else
 			imagen = "autopoli.png"
 	} 
