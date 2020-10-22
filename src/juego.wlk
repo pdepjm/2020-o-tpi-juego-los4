@@ -8,7 +8,7 @@ object nombreDelJuego {
 	method iniciar() {
 		self.configurarJuego()
 		self.aparecerObjetos()
-		self.iniciarNivel("calle")
+		self.iniciarNivel(calle)
 		self.configurarTeclasPersonaje()
 		self.configurarColisiones()
 		game.start()
@@ -30,17 +30,17 @@ object nombreDelJuego {
 	}
 	
 	method iniciarNivel(nivel){
-		if (nivel == "calle"){
+		if (nivel == calle){
 			game.onTick(3200.randomUpTo(3800), "aparecer objeto grande", {self.mover(new ObjetoGrande())})	
 			game.onTick(1600.randomUpTo(3000), "aparecer objeto mediano", {self.mover(new ObjetoMediano())})
 			game.onTick(1000.randomUpTo(3000), "aparecer objeto chico", {self.mover(new ObjetoChico())})
-			game.onTick(20000.randomUpTo(15000), "aparecer portal espacio", {self.mover(new Portal())})
+			game.onTick(2000.randomUpTo(1500), "aparecer portal espacio", {self.mover(new Portal())})
 		}
-		else if(nivel == "espacio") {       //esto supongo que debe hacerse separado medio repitiendo codigo xq como los objetos son una clase no se //le puede cambiar la imagen a todos como con el jugador y el perseguidor
+		else if(nivel == espacio) {       //le puede cambiar la imagen a todos como con el jugador y el perseguidor
 			game.onTick(3200.randomUpTo(3800), "aparecer objeto grande espacio", {self.mover(new ObjetoGrandeEspacio())})	
 			game.onTick(1600.randomUpTo(3000), "aparecer objeto mediano espacio", {self.mover(new ObjetoMedianoEspacio())})
 			game.onTick(1000.randomUpTo(3000), "aparecer objeto chico espacio", {self.mover(new ObjetoChicoEspacio())})
-			game.onTick(20000.randomUpTo(15000), "aparecer portal espacio", {self.mover(new PortalEspacio())})
+			game.onTick(2000.randomUpTo(1500), "aparecer portal espacio", {self.mover(new PortalEspacio())})
 		}
 	} 
 	

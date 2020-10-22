@@ -5,11 +5,8 @@ object personaje{ // podríamos poner un nombre más representativo como jugador
 	var imagen = "autoPersonaje.png"
 	var estrellas = 0
 	
-	method cambiarImagen(){
-		if (imagen == "autoPersonaje.png"){
-			imagen = "navePersonaje.png"
-		}else
-			imagen = "autoPersonaje.png"
+	method cambiarImagen(nueva){
+		imagen = nueva
 	} 
 	
 	method image() = imagen
@@ -28,11 +25,8 @@ object personaje{ // podríamos poner un nombre más representativo como jugador
 object perseguidor{
 	var imagen = "autopoli.png"
 	
-	method cambiarImagen(){
-		if (imagen == "autopoli.png"){
-			imagen = "navePerseguidor.png"
-		}else
-			imagen = "autopoli.png"
+	method cambiarImagen(nueva){
+		imagen = nueva
 	} 
 	
 	method position() = game.at(-1,personaje.position().y())
