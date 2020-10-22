@@ -1,9 +1,10 @@
 import wollok.game.*
 import objects.*
+import portal.*
 
 object personaje{ // podríamos poner un nombre más representativo como jugador(? protagonista(?
 	var posicion = game.at(5, 2) 
-	var imagen = "autoPersonaje.png"
+	var imagen = calle.imagenJugador()
 	var estrellas = 0
 	
 	method cambiarImagen(nueva){
@@ -26,7 +27,7 @@ object personaje{ // podríamos poner un nombre más representativo como jugador
 }
 
 object perseguidor{
-	var imagen = "autopoli.png"
+	var imagen = calle.imagenPerseguidor()
 	
 	method cambiarImagen(nueva){
 		imagen = nueva

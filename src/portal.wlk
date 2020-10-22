@@ -4,20 +4,13 @@ import objects.*
 import juego.*
 
 class Portal inherits ObjetosAEsquivar{
-	var imagen = "portal.png"
-
 	method velocidad() = 200
 
-	method image() = imagen
-	
-	method cambiarImagen(nueva){
-		imagen = nueva
-	} 
+	method image() = "portal.png"
 	
 	method chocarCon(jugador){
 		game.clear()
 		game.addVisual(fondoEspacio)	
-		self.cambiarImagen(espacio.imagenPortal())
 		cambioDeNivel.configurarNivel(espacio)
 		cambioDeNivel.cambiarANivel(espacio)
 	}
@@ -36,7 +29,6 @@ class PortalEspacio inherits Portal{
 object cambioDeNivel{
 	
 	method configurarNivel(nivel){
-		//game.addVisual(nivel.imagenFondo())
 		personaje.cambiarImagen(nivel.imagenJugador())
 		perseguidor.cambiarImagen(nivel.imagenPerseguidor())
 	}
@@ -59,15 +51,13 @@ object fondoEspacio{
 
 object calle{
 	const property imagenJugador = "autoPersonaje.png"
-	const property imagenPerseguidor = "autopoli.png"
-	const property imagenPortal = "portal.png" 
+	const property imagenPerseguidor = "autopoli.png" 
 	const property imagenFondo = " " 
 }
 
 object espacio{
 	const property imagenJugador = "navePersonaje.png"
 	const property imagenPerseguidor = "navePerseguidor.png"
-	const property imagenPortal = "portalEspacio.png"
 	const property imagenFondo = "space.jpg" 
 }
 
