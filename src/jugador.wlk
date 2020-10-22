@@ -1,7 +1,7 @@
 import wollok.game.*
 
 object personaje{ // podríamos poner un nombre más representativo como jugador(? protagonista(?
-	var posicion = game.at(5, 2) //Falta cargar
+	var posicion = game.at(5, 2) 
 	var imagen = "autoPersonaje.png"
 	var estrellas = 0
 	
@@ -12,7 +12,7 @@ object personaje{ // podríamos poner un nombre más representativo como jugador
 			imagen = "autoPersonaje.png"
 	} 
 	
-	method image() = imagen//Falta cargar 
+	method image() = imagen
 	
 	method position() = posicion
 		
@@ -24,6 +24,7 @@ object personaje{ // podríamos poner un nombre más representativo como jugador
 		estrellas += 1
 	}
 }
+
 object perseguidor{
 	var imagen = "autopoli.png"
 	

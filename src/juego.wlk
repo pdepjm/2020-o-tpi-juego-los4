@@ -20,12 +20,12 @@ object nombreDelJuego {
 		game.height(17)
 		game.boardGround("carretera2.png") // Cuantos carriles? Cual va a ser el límite? 
 											//Actual: ÁreaJugable: 400x750, Limites Arriba y Abajo (respect.): 50x750)
-		//game.showAttributes(personaje) //no se que es esto pero si lo descomento no anda nada
 	}
 
 	method aparecerObjetos(){
 		game.addVisual(personaje)
 		game.addVisual(perseguidor)
+		game.showAttributes(personaje) 
 		game.onTick(9000.randomUpTo(10000), "aparecer estrella", {self.mover(new Estrella())})
 	}
 	
