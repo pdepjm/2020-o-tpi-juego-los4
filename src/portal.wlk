@@ -17,9 +17,8 @@ class Portal inherits ObjetosAEsquivar{
 	method chocarCon(jugador){
 		game.clear()
 		game.addVisual(fondoEspacio)	
-		personaje.cambiarImagen(espacio.imagenJugador())
-		perseguidor.cambiarImagen(espacio.imagenPerseguidor())
 		self.cambiarImagen(espacio.imagenPortal())
+		cambioDeNivel.configurarNivel(espacio)
 		cambioDeNivel.cambiarANivel(espacio)
 	}
 }
@@ -29,14 +28,18 @@ class PortalEspacio inherits Portal{
 	
 	override method chocarCon(jugador){
 		game.clear()
-		personaje.cambiarImagen(calle.imagenJugador())
-		perseguidor.cambiarImagen(calle.imagenPerseguidor())
+		cambioDeNivel.configurarNivel(calle)
 		cambioDeNivel.cambiarANivel(calle)
 	}
 }
 
-
 object cambioDeNivel{
+	
+	method configurarNivel(nivel){
+		personaje.cambiarImagen(nivel.imagenJugador())
+		perseguidor.cambiarImagen(nivel.imagenPerseguidor())
+	}
+	
 	method cambiarANivel(nivel){
 		nombreDelJuego.aparecerObjetos()
 		nombreDelJuego.configurarTeclasPersonaje()
