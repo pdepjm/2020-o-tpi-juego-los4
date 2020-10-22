@@ -18,6 +18,10 @@ object personaje{ // podríamos poner un nombre más representativo como jugador
 	method moverPersonaje(posicionADondeMoverse){
 		if(limites.dentroDeLimites(self)){
 			posicion = posicionADondeMoverse
+		}else if(self.position().y() >= limites.limiteYSup()){
+			posicion = self.position().down(2)
+		}else{ 
+			posicion = self.position().up(1)	
 		}
 	}
 	

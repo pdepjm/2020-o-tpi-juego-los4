@@ -36,7 +36,7 @@ object nombreDelJuego {
 			game.onTick(1000.randomUpTo(3000), "aparecer objeto chico", {self.mover(new ObjetoChico())})
 			game.onTick(2000.randomUpTo(1500), "aparecer portal espacio", {self.mover(new Portal())})
 		}
-		else if(nivel == espacio) {       //le puede cambiar la imagen a todos como con el jugador y el perseguidor
+		else if(nivel == espacio) {      
 			game.onTick(3200.randomUpTo(3800), "aparecer objeto grande espacio", {self.mover(new ObjetoGrandeEspacio())})	
 			game.onTick(1600.randomUpTo(3000), "aparecer objeto mediano espacio", {self.mover(new ObjetoMedianoEspacio())})
 			game.onTick(1000.randomUpTo(3000), "aparecer objeto chico espacio", {self.mover(new ObjetoChicoEspacio())})
@@ -48,7 +48,7 @@ object nombreDelJuego {
 		miObjeto.aparecer()
 		game.onTick(miObjeto.velocidad(), "moverse", {miObjeto.moverse(miObjeto.position().left(1))})
 		game.onCollideDo(personaje, { visualColisionado => visualColisionado.chocarCon(personaje)}) 
-		game.onCollideDo(perseguidor, { visualColisionado => visualColisionado.desaparecer()}) 
+		game.onCollideDo(perseguidor, { visualColisionado => game.removeVisual(visualColisionado)}) 
 		//game.onCollideDo(barrera, { visualColisionado => visualColisionado.desaparecer()}) 	
 	}					//IMPLEMENTAR
 	
