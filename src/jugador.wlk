@@ -19,9 +19,9 @@ object personaje{ // podríamos poner un nombre más representativo como jugador
 		if(limites.dentroDeLimites(self)){
 			posicion = posicionADondeMoverse
 		}else if(self.position().y() >= limites.limiteYSup()){
-			posicion = self.position().down(2)
-		}else{ 
-			posicion = self.position().up(1)	
+			posicion = self.position().down(2) //tuve que agregar este "rebote" porque con lo anterior el auto llegaba
+		}else{  									//al borde y ya no lo podías mover mas
+			posicion = self.position().up(2)	
 		}
 	}
 	
