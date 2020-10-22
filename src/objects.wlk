@@ -14,15 +14,26 @@ class ObjetosAEsquivar{
 		posicion = game.at(x, y)
 	}
 	
-	method desaparecer(){ // Los objetos se siguen moviendo fuera de pantalla. Llegado un punto se lagea todo, hay que eliminarlos apenas superen el límite en x.
-		
-	}
-	
 	method moverse(nuevaPosicion) {
-		posicion = nuevaPosicion
+			posicion = nuevaPosicion
 	}
-	
+
+	method desaparecer(){
+		game.removeVisual(self)
+	}
 }
+
+object limites{
+	const property limiteX = 0 
+	const property limiteYSup = 14 
+	const property limiteYInf = 2
+	
+	method dentroDeLimites(objeto) = 
+		objeto.position().x() >= self.limiteX() && 
+		objeto.position().y() <= self.limiteYSup() &&
+		objeto.position().y() >= self.limiteYInf()
+}
+
 
 class ObjetoGrande inherits ObjetosAEsquivar {	
 	method image() = "camionBasura.png" //Podría ir cambiando al azar, muy monotomo. 

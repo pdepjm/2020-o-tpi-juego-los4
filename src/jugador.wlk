@@ -1,4 +1,5 @@
 import wollok.game.*
+import objects.*
 
 object personaje{ // podríamos poner un nombre más representativo como jugador(? protagonista(?
 	var posicion = game.at(5, 2) 
@@ -14,7 +15,9 @@ object personaje{ // podríamos poner un nombre más representativo como jugador
 	method position() = posicion
 		
 	method moverPersonaje(posicionADondeMoverse){
-		posicion = posicionADondeMoverse
+		if(limites.dentroDeLimites(self)){
+			posicion = posicionADondeMoverse
+		}
 	}
 	
 	method colleccionarEstrella(){

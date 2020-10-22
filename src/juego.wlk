@@ -48,7 +48,9 @@ object nombreDelJuego {
 		miObjeto.aparecer()
 		game.onTick(miObjeto.velocidad(), "moverse", {miObjeto.moverse(miObjeto.position().left(1))})
 		game.onCollideDo(personaje, { visualColisionado => visualColisionado.chocarCon(personaje)}) 
-	}
+		game.onCollideDo(perseguidor, { visualColisionado => visualColisionado.desaparecer()}) 
+		//game.onCollideDo(barrera, { visualColisionado => visualColisionado.desaparecer()}) 	
+	}					//IMPLEMENTAR
 	
 	method configurarTeclasPersonaje(){
 		keyboard.up().onPressDo({ personaje.moverPersonaje(personaje.position().up(1))})
