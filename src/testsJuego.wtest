@@ -1,0 +1,17 @@
+import wollok.game.*
+import jugador.*
+import objects.*
+import portal.*
+import juego.*
+
+describe "tests del juego" {
+
+	test "el perseguidor estará ubicado en la misma Y que el personaje" {
+		assert.equals(perseguidor.position().y(),personaje.position().y())
+	}
+	
+	test "la posición inicial del jugador es en x=5, y=2" {
+		assert.equals(personaje.position().x(),5)
+		assert.equals(personaje.position().y(),2)
+	}
+}

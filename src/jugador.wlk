@@ -15,6 +15,7 @@ object personaje{ // podríamos poner un nombre más representativo como jugador
 	
 	method position() = posicion
 		
+		
 	method moverPersonaje(posicionADondeMoverse){
 		if(limites.dentroDeLimites(self)){
 			posicion = posicionADondeMoverse
