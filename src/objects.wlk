@@ -80,9 +80,20 @@ class ObjetoChicoEspacio inherits ObjetoChico{
 	override method image() = "smallSpaceObject.png" 
 }
 
-class Estrella inherits ObjetosAEsquivar{
+class EstrellaMayor inherits ObjetosAEsquivar{
 	method image() = "estrella_amarilla.png"
+	method valor() = 100
+	method velocidad()= 100
 	
+	method chocarCon(jugador){
+		jugador.colleccionarEstrella()
+		game.removeVisual(self)	
+		personaje.coleccionarEstrella(self)
+	}
+}
+class EstrellaMenor inherits ObjetosAEsquivar{
+	/**method image() = "buscando imagen...."*/
+	method valor()= 50
 	method velocidad()= 100
 	
 	method chocarCon(jugador){
@@ -90,4 +101,3 @@ class Estrella inherits ObjetosAEsquivar{
 		game.removeVisual(self)	
 	}
 }
-

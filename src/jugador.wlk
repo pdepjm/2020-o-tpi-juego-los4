@@ -1,12 +1,12 @@
 import wollok.game.*
 import objects.*
 import portal.*
+import juego.*
 
 object personaje{ // podríamos poner un nombre más representativo como jugador(? protagonista(?
 	var posicion = game.at(5, 2) 
 	var imagen = calle.imagenJugador()
-	var estrellas = 0
-	
+	var estrellas = []
 	method cambiarImagen(nueva){
 		imagen = nueva
 	} 
@@ -26,9 +26,17 @@ object personaje{ // podríamos poner un nombre más representativo como jugador
 		}
 	}
 	
-	method colleccionarEstrella(){
-		estrellas += 1
+	method colleccionarEstrella(unaEstrella){
+		estrellas.add(unaEstrella)
+		if(self.puntaje() >= 200){/**el 200 es momentaneo */
+			nombreDelJuego.ganar()
+		}else {
+			
+		}
 	}
+	
+	method puntaje() = estrellas.sum({estrella => estrella.valor()})
+
 }
 
 object perseguidor{
