@@ -15,3 +15,49 @@ describe "tests del juego" {
 		assert.equals(personaje.position().y(),2)
 	}
 }
+
+describe "Estrellas"{
+	test "Agregar estrella si todavía no alcanzo el puntaje necesario para ganar"{
+	const estrellitaTest = new EstrellaMenor()
+	personaje.coleccionarEstrella(estrellitaTest)
+	assert.equals(50, personaje.puntaje())
+	}
+	//test "Cuando el personaje alcanza el puntaje gana el juego"{}
+}
+
+describe "Cambio de imagenes"{
+	test "Al pasar al espacio, el jugador pasa de ser auto a ser nave espacial"{
+		const portalito = new Portal()
+		portalito.chocarCon(personaje)
+		assert.equals("navePersonaje.png", personaje.image())
+		
+	}
+}
+
+/*El componente visual no se encuentra en el tablero
+ * describe "Movimientos del personaje al chocar con los obstáculos"{
+	
+	test "El personaje se mueve una posicion al chocar con un objeto pequeño"{
+		//var posicion = game.at(5, 2) 
+		const objetoChico = new ObjetoChico()
+		objetoChico.chocarCon(personaje)
+		assert.equals(personaje.position().x(), 4)
+	}
+	
+	test "El personaje no debería moverse ni más ni menos de 1 posición"{
+		const objetoChico = new ObjetoChico()
+		objetoChico.chocarCon(personaje)
+		assert.notThat(personaje.position().x() == 3)
+	}
+	test "El personaje se mueve 2 posiciones al chocar con un objeto mediano"{
+		const objetoMediano = new ObjetoMediano()
+		objetoMediano.chocarCon(personaje)
+		assert.equals(personaje.position().x(), 3)
+	}
+		test "El personaje no debería moverse ni más ni menos de 2 posiciones"{
+		const objetoMediano = new ObjetoMediano()
+		objetoMediano.chocarCon(personaje)
+		assert.notThat(personaje.position().x() == 5)
+
+}}
+*/

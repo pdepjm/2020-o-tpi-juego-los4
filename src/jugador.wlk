@@ -26,7 +26,7 @@ object personaje{ // podríamos poner un nombre más representativo como jugador
 		}
 	}
 	
-	method colleccionarEstrella(unaEstrella){
+	method coleccionarEstrella(unaEstrella){
 		estrellas.add(unaEstrella)
 		if(self.puntaje() >= 200){/**el 200 es momentaneo */
 			nombreDelJuego.ganar()

@@ -92,7 +92,7 @@ class EstrellaMayor inherits ObjetosAEsquivar{
 	}
 }
 class EstrellaMenor inherits ObjetosAEsquivar{
-	/**method image() = "buscando imagen...."*/
+	method image() = "strellaAzul.png"
 	method valor()= 50
 	method velocidad()= 100
 	
