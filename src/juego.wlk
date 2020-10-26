@@ -26,7 +26,8 @@ object nombreDelJuego {
 		game.addVisual(personaje)
 		game.addVisual(perseguidor)
 		game.showAttributes(personaje) 
-		game.onTick(9000.randomUpTo(10000), "aparecer estrella", {self.mover(new Estrella())})
+		game.onTick(9000.randomUpTo(10000), "aparecer estrella", {self.mover(new EstrellaMayor())})
+		game.onTick(9000.randomUpTo(10000), "aparecer estrella", {self.mover(new EstrellaMenor())})
 	}
 	
 	method iniciarNivel(nivel){

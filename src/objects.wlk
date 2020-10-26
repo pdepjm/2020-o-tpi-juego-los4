@@ -86,9 +86,9 @@ class EstrellaMayor inherits ObjetosAEsquivar{
 	method velocidad()= 100
 	
 	method chocarCon(jugador){
-		jugador.colleccionarEstrella()
+		jugador.colleccionarEstrella(self)
 		game.removeVisual(self)	
-		personaje.coleccionarEstrella(self)
+		
 	}
 }
 class EstrellaMenor inherits ObjetosAEsquivar{
