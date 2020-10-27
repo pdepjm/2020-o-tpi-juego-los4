@@ -26,7 +26,7 @@ object nombreDelJuego {
 		game.addVisual(personaje)
 		game.addVisual(perseguidor)
 		game.showAttributes(personaje) 
-		game.onTick(9000.randomUpTo(10000), "aparecer estrella", {self.mover(new EstrellaMayor())})
+		game.onTick(15000.randomUpTo(15000), "aparecer estrella", {self.mover(new EstrellaMayor())})
 		game.onTick(9000.randomUpTo(10000), "aparecer estrella", {self.mover(new EstrellaMenor())})
 	}
 	
@@ -35,13 +35,13 @@ object nombreDelJuego {
 			game.onTick(3200.randomUpTo(3800), "aparecer objeto grande", {self.mover(new ObjetoGrande())})	
 			game.onTick(1600.randomUpTo(3000), "aparecer objeto mediano", {self.mover(new ObjetoMediano())})
 			game.onTick(1000.randomUpTo(3000), "aparecer objeto chico", {self.mover(new ObjetoChico())})
-			game.onTick(2000.randomUpTo(1500), "aparecer portal espacio", {self.mover(new Portal())})
+			game.onTick(20000.randomUpTo(5000), "aparecer portal espacio", {self.mover(new Portal())})
 		}
 		else if(nivel == espacio) {      
 			game.onTick(3200.randomUpTo(3800), "aparecer objeto grande espacio", {self.mover(new ObjetoGrandeEspacio())})	
 			game.onTick(1600.randomUpTo(3000), "aparecer objeto mediano espacio", {self.mover(new ObjetoMedianoEspacio())})
 			game.onTick(1000.randomUpTo(3000), "aparecer objeto chico espacio", {self.mover(new ObjetoChicoEspacio())})
-			game.onTick(2000.randomUpTo(1500), "aparecer portal espacio", {self.mover(new PortalEspacio())})
+			game.onTick(20000.randomUpTo(5000), "aparecer portal espacio", {self.mover(new PortalEspacio())})
 		}
 	} 
 	
