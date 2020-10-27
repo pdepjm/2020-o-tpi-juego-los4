@@ -51,7 +51,7 @@ object fondoEspacio{
 
 object calle{
 	const property imagenJugador = "autoPersonaje.png"
-	const property imagenPerseguidor = "autopoli.png" 
+	const property imagenPerseguidor = "autoPolicia.png" 
 	const property imagenFondo = " " 
 }
 

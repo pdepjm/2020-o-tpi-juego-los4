@@ -26,11 +26,28 @@ describe "Estrellas"{
 }
 
 describe "Cambio de imagenes"{
-	test "Al pasar al espacio, el jugador pasa de ser auto a ser nave espacial"{
-		const portalito = new Portal()
-		portalito.chocarCon(personaje)
+	
+	const portalAEspacio = new Portal()
+	const portalACiudad = new PortalEspacio()
+	
+	test "Al pasar al espacio, el jugador pasa de ser autoPersonaje a ser navePersonaje"{
+		portalAEspacio.chocarCon(personaje)
 		assert.equals("navePersonaje.png", personaje.image())
 		
+	}
+	test "Al pasar al espacio, el perseguidor pasa de ser autoPolicia a ser navePerseguidor"{
+		portalAEspacio.chocarCon(personaje)
+		assert.equals("navePerseguidor.png",perseguidor.image())
+	}
+	test "Al pasar a la ciudad, el jugador pasa de ser navePersonaje a ser autoPersonaje"{
+		portalAEspacio.chocarCon(personaje)
+		portalACiudad.chocarCon(personaje)
+		assert.equals("autoPersonaje.png", personaje.image())
+	}
+	test "Al pasar a la ciudad, el perseguidor pasa de ser navePerseguidor a ser autoPolicia"{
+		portalAEspacio.chocarCon(personaje)
+		portalACiudad.chocarCon(personaje)
+		assert.equals("autoPolicia.png", perseguidor.image())
 	}
 }
 
