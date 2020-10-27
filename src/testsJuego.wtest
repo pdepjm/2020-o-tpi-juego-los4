@@ -4,8 +4,7 @@ import objects.*
 import portal.*
 import juego.*
 
-describe "tests del juego" {
-
+describe "posicionamiento inicial de personaje y perseguidor" {
 	test "el perseguidor estará ubicado en la misma Y que el personaje" {
 		assert.equals(perseguidor.position().y(),personaje.position().y())
 	}
