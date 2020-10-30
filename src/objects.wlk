@@ -115,6 +115,8 @@ class ObjetoChicoEspacio inherits ObjetoChico{
 	override method image() = "smallSpaceObject.png" 
 }
 
+
+//También podemos ver lo mismo acá en estrella para evitar repetir el coleccionar estrella
 class EstrellaMayor inherits ObjetosAEsquivar{
 	method image() = "estrella_amarilla.png"
 	method valor() = 100
