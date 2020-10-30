@@ -41,6 +41,35 @@ object limites{
 		objeto.position().y() >= self.limiteYInf()
 }
 
+//Opción para evitar repetición de lógica al mover personaje, la dejo comentada porque al heredar ObjetosAEsquivar, 
+//no sé si nos traiga conflictos con el método aparecer y el tema de las imagenes y eso. Lo podemos consultar el finde
+
+/*class ObjetosQueEmpujan inherits ObjetosAEsquivar{
+	method empujar(cantPos){
+		personaje.moverPersonaje(personaje.position().left(cantPos))	
+	}
+}
+
+class ObjetoMediano inherits ObjetosQueEmpujan{		
+	method image() = "autoPObjMediano.png" //Podría ir cambiando al azar, muy monotomo. 
+
+	method velocidad() = 350
+	
+	override method chocarCon(jugador){
+		self.empujar(2)
+	} 
+}
+
+class ObjetoChico inherits ObjetosQueEmpujan{
+	method image() = "cono.png"  //Podría ir cambiando al azar, muy monotomo. 
+	
+	method velocidad() = 300
+	
+	override method chocarCon(jugador){	
+		self.empujar(1)
+	}
+}*/
+
 
 class ObjetoGrande inherits ObjetosAEsquivar {	
 	method image() = "camionBasura.png" //Podría ir cambiando al azar, muy monotomo. 
