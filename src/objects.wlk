@@ -21,6 +21,13 @@ class ObjetosAEsquivar{
 	method desaparecer(){
 		game.removeVisual(self)
 	}
+	
+	method chocarConPrincipal(jugador){
+		self.chocarCon(jugador)
+		self.desaparecer()
+	}
+	
+	method chocarCon(jugador)
 }
 
 object limites{
@@ -40,9 +47,8 @@ class ObjetoGrande inherits ObjetosAEsquivar {
 		
 	method velocidad() = 400
 	
-	method chocarCon(jugador){
-		nombreDelJuego.perder()
-		game.removeVisual(self)	
+	override method chocarCon(jugador){
+		nombreDelJuego.perder()	
 	}	
 }
 
@@ -51,9 +57,8 @@ class ObjetoMediano inherits ObjetosAEsquivar{
 
 	method velocidad() = 350
 	
-	method chocarCon(jugador){
+	override method chocarCon(jugador){
 		personaje.moverPersonaje(personaje.position().left(2))
-		game.removeVisual(self)	
 	} 
 }
 
@@ -62,11 +67,12 @@ class ObjetoChico inherits ObjetosAEsquivar{
 	
 	method velocidad() = 300
 	
-	method chocarCon(jugador){	
+	override method chocarCon(jugador){	
 		personaje.moverPersonaje(personaje.position().left(1))
-		game.removeVisual(self)	
 	}
 }
+
+
 
 class ObjetoGrandeEspacio inherits ObjetoGrande{
 	override method image() = "bigSpaceObject.png" 
@@ -85,9 +91,8 @@ class EstrellaMayor inherits ObjetosAEsquivar{
 	method valor() = 100
 	method velocidad()= 100
 	
-	method chocarCon(jugador){
+	override method chocarCon(jugador){
 		jugador.colleccionarEstrella(self)
-		game.removeVisual(self)	
 		
 	}
 }
@@ -96,8 +101,7 @@ class EstrellaMenor inherits ObjetosAEsquivar{
 	method valor()= 50
 	method velocidad()= 100
 	
-	method chocarCon(jugador){
-		jugador.colleccionarEstrella()
-		game.removeVisual(self)	
+	override method chocarCon(jugador){
+		jugador.colleccionarEstrella(self)	
 	}
 }
