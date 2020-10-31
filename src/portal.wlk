@@ -8,7 +8,7 @@ class Portal inherits ObjetosAEsquivar{
 
 	method image() = "portal.png"
 	
-	method chocarCon(jugador){
+	override method chocarCon(jugador){
 		game.clear()
 		game.addVisual(fondoEspacio)	
 		cambioDeNivel.configurarNivel(espacio)

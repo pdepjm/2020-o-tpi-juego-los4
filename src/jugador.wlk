@@ -6,7 +6,7 @@ import juego.*
 object personaje{ // podríamos poner un nombre más representativo como jugador(? protagonista(?
 	var posicion = game.at(5, 2) 
 	var imagen = calle.imagenJugador()
-	var estrellas = []
+	const estrellas = []
 	method cambiarImagen(nueva){
 		imagen = nueva
 	} 
