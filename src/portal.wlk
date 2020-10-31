@@ -27,7 +27,6 @@ class PortalEspacio inherits Portal{
 }
 
 object cambioDeNivel{
-	
 	method configurarNivel(nivel){
 		personaje.cambiarImagen(nivel.imagenJugador())
 		perseguidor.cambiarImagen(nivel.imagenPerseguidor())
@@ -50,12 +49,14 @@ object fondoEspacio{
 }
 
 object calle{
+	const property nombreNivel = "street"
 	const property imagenJugador = "autoPersonaje.png"
 	const property imagenPerseguidor = "autoPolicia.png" 
 	const property imagenFondo = " " 
 }
 
 object espacio{
+	const property nombreNivel = "space"
 	const property imagenJugador = "navePersonaje.png"
 	const property imagenPerseguidor = "navePerseguidor.png"
 	const property imagenFondo = "space.jpg" 

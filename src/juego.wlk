@@ -2,6 +2,7 @@ import wollok.game.*
 import jugador.*
 import objects.*
 import portal.*
+import disparo.*
 
 object nombreDelJuego {
 				
@@ -31,17 +32,18 @@ object nombreDelJuego {
 	}
 	
 	method iniciarNivel(nivel){
-		if (nivel == calle){
+		if (nivel.nombreNivel() == "street"){
 			game.onTick(3200.randomUpTo(3800), "aparecer objeto grande", {self.mover(new ObjetoGrande())})	
 			game.onTick(1600.randomUpTo(3000), "aparecer objeto mediano", {self.mover(new ObjetoMediano())})
 			game.onTick(1000.randomUpTo(3000), "aparecer objeto chico", {self.mover(new ObjetoChico())})
 			game.onTick(20000.randomUpTo(5000), "aparecer portal espacio", {self.mover(new Portal())})
 		}
-		else if(nivel == espacio) {      
+		else if(nivel.nombreNivel() == "space") {      
 			game.onTick(3200.randomUpTo(3800), "aparecer objeto grande espacio", {self.mover(new ObjetoGrandeEspacio())})	
 			game.onTick(1600.randomUpTo(3000), "aparecer objeto mediano espacio", {self.mover(new ObjetoMedianoEspacio())})
 			game.onTick(1000.randomUpTo(3000), "aparecer objeto chico espacio", {self.mover(new ObjetoChicoEspacio())})
 			game.onTick(20000.randomUpTo(5000), "aparecer portal espacio", {self.mover(new PortalEspacio())})
+			keyboard.space().onPressDo({self.probarDisparo(new Disparo())})
 		}
 	} 
 	
@@ -61,6 +63,23 @@ object nombreDelJuego {
 	method configurarColisiones(){
 		game.onCollideDo(personaje, { algo => algo.chocarCon(personaje)})
 	}
+		
+	method probarDisparo(disparado){
+		if(arma.cargada()){
+			self.disparar(disparado)
+		}else{
+		}
+	}
+	
+	method disparar(disparado){
+		disparado.aparecer()
+		arma.descargar()
+		game.onTick(disparado.velocidad(), "disparar", {disparado.moverse(disparado.position().right(1))})	
+		game.onCollideDo(disparado, { visualColisionado => game.removeVisual(visualColisionado)}) 
+		game.schedule(400, {game.removeVisual(disparado)})
+		game.onTick(2500,"recargar arma",{arma.recargar()})
+	}
+	
 	
 	method perder(){
 		game.say(personaje, "mensaje sad de perdieron")
