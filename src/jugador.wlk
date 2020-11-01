@@ -7,6 +7,7 @@ object personaje{ // podríamos poner un nombre más representativo como jugador
 	var posicion = game.at(5, 2) 
 	var imagen = calle.imagenJugador()
 	const estrellas = []
+	
 	method cambiarImagen(nueva){
 		imagen = nueva
 	} 
@@ -14,7 +15,6 @@ object personaje{ // podríamos poner un nombre más representativo como jugador
 	method image() = imagen
 	
 	method position() = posicion
-		
 		
 	method moverPersonaje(posicionADondeMoverse){
 		if(limites.dentroDeLimites(self)){
@@ -34,9 +34,11 @@ object personaje{ // podríamos poner un nombre más representativo como jugador
 			
 		}
 	}
-	
 	method puntaje() = estrellas.sum({estrella => estrella.valor()})
-
+	
+	method chocarPerseguidor(){
+		nombreDelJuego.perder()
+	}
 }
 
 object perseguidor{
@@ -49,4 +51,6 @@ object perseguidor{
 	method position() = game.at(-1,personaje.position().y())
 	
 	method image() = imagen
+
+	method chocarCon(personaje){}
 }

@@ -18,16 +18,14 @@ class ObjetosAEsquivar{
 			posicion = nuevaPosicion
 	}
 
-	method desaparecer(){
+	method chocarCon(jugador){
 		game.removeVisual(self)
+		self.efectoAlChocar(jugador)
 	}
 	
-	method chocarConPrincipal(jugador){
-		self.chocarCon(jugador)
-		self.desaparecer()
-	}
+	method efectoAlChocar(jugador){}
 	
-	method chocarCon(jugador)
+	method chocarPerseguidor(){}
 }
 
 object limites{
@@ -74,19 +72,20 @@ class ObjetoChico inherits ObjetosQueEmpujan{
 class ObjetoGrande inherits ObjetosAEsquivar {	
 	method image() = "camionBasura.png" //Podría ir cambiando al azar, muy monotomo. 
 		
-	method velocidad() = 400
+	method velocidad() = 300
 	
-	override method chocarCon(jugador){
+	override method efectoAlChocar(jugador){
 		nombreDelJuego.perder()	
 	}	
+	
 }
 
 class ObjetoMediano inherits ObjetosAEsquivar{		
 	method image() = "autoPObjMediano.png" //Podría ir cambiando al azar, muy monotomo. 
 
-	method velocidad() = 350
+	method velocidad() = 250
 	
-	override method chocarCon(jugador){
+	override method efectoAlChocar(jugador){
 		personaje.moverPersonaje(personaje.position().left(2))
 	} 
 }
@@ -94,14 +93,12 @@ class ObjetoMediano inherits ObjetosAEsquivar{
 class ObjetoChico inherits ObjetosAEsquivar{
 	method image() = "cono.png"  //Podría ir cambiando al azar, muy monotomo. 
 	
-	method velocidad() = 300
+	method velocidad() = 200
 	
-	override method chocarCon(jugador){	
+	override method efectoAlChocar(jugador){	
 		personaje.moverPersonaje(personaje.position().left(1))
 	}
 }
-
-
 
 class ObjetoGrandeEspacio inherits ObjetoGrande{
 	override method image() = "bigSpaceObject.png" 
@@ -122,7 +119,7 @@ class EstrellaMayor inherits ObjetosAEsquivar{
 	method valor() = 100
 	method velocidad()= 100
 	
-	override method chocarCon(jugador){
+	override method efectoAlChocar(jugador){
 		jugador.colleccionarEstrella(self)
 		
 	}
@@ -132,7 +129,7 @@ class EstrellaMenor inherits ObjetosAEsquivar{
 	method valor()= 50
 	method velocidad()= 100
 	
-	override method chocarCon(jugador){
+	override method efectoAlChocar(jugador){
 		jugador.colleccionarEstrella(self)	
 	}
 }

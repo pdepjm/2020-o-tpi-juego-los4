@@ -33,15 +33,15 @@ object nombreDelJuego {
 	
 	method iniciarNivel(nivel){
 		if (nivel.nombreNivel() == "street"){
-			game.onTick(3200.randomUpTo(3800), "aparecer objeto grande", {self.mover(new ObjetoGrande())})	
-			game.onTick(1600.randomUpTo(3000), "aparecer objeto mediano", {self.mover(new ObjetoMediano())})
-			game.onTick(1000.randomUpTo(3000), "aparecer objeto chico", {self.mover(new ObjetoChico())})
+			game.onTick(3500.randomUpTo(4500), "aparecer objeto grande", {self.mover(new ObjetoGrande())})	
+			game.onTick(2000.randomUpTo(3500), "aparecer objeto mediano", {self.mover(new ObjetoMediano())})
+			game.onTick(1000.randomUpTo(1500), "aparecer objeto chico", {self.mover(new ObjetoChico())})
 			game.onTick(20000.randomUpTo(5000), "aparecer portal espacio", {self.mover(new Portal())})
 		}
 		else if(nivel.nombreNivel() == "space") {      
-			game.onTick(3200.randomUpTo(3800), "aparecer objeto grande espacio", {self.mover(new ObjetoGrandeEspacio())})	
-			game.onTick(1600.randomUpTo(3000), "aparecer objeto mediano espacio", {self.mover(new ObjetoMedianoEspacio())})
-			game.onTick(1000.randomUpTo(3000), "aparecer objeto chico espacio", {self.mover(new ObjetoChicoEspacio())})
+			game.onTick(3500.randomUpTo(4500), "aparecer objeto grande espacio", {self.mover(new ObjetoGrandeEspacio())})	
+			game.onTick(2000.randomUpTo(3500), "aparecer objeto mediano espacio", {self.mover(new ObjetoMedianoEspacio())})
+			game.onTick(1000.randomUpTo(1500), "aparecer objeto chico espacio", {self.mover(new ObjetoChicoEspacio())})
 			game.onTick(20000.randomUpTo(5000), "aparecer portal espacio", {self.mover(new PortalEspacio())})
 			keyboard.space().onPressDo({self.probarDisparo(new Disparo())})
 		}
@@ -50,10 +50,10 @@ object nombreDelJuego {
 	method mover(miObjeto){
 		miObjeto.aparecer()
 		game.onTick(miObjeto.velocidad(), "moverse", {miObjeto.moverse(miObjeto.position().left(1))})
-		game.onCollideDo(personaje, { visualColisionado => visualColisionado.chocarCon(personaje)}) 
-		game.onCollideDo(perseguidor, { visualColisionado => game.removeVisual(visualColisionado)}) 
-		//game.onCollideDo(barrera, { visualColisionado => visualColisionado.desaparecer()}) 	
-	}					//IMPLEMENTAR
+		game.onCollideDo(personaje, { visualColisionado => visualColisionado.chocarCon(personaje)})
+		game.onCollideDo(perseguidor, { visualColisionado => visualColisionado.chocarPerseguidor()}) 
+		game.schedule(miObjeto.velocidad()*(game.width()+2), {self.sigueEnPantalla(miObjeto)}) //esto es para que no haya lag	
+	}				
 	
 	method configurarTeclasPersonaje(){
 		keyboard.up().onPressDo({ personaje.moverPersonaje(personaje.position().up(1))})
@@ -67,8 +67,7 @@ object nombreDelJuego {
 	method probarDisparo(disparado){
 		if(arma.cargada()){
 			self.disparar(disparado)
-		}else{
-		}
+		}else{}
 	}
 	
 	method disparar(disparado){
@@ -80,6 +79,11 @@ object nombreDelJuego {
 		game.onTick(2500,"recargar arma",{arma.recargar()})
 	}
 	
+	method sigueEnPantalla(miObjeto){
+		if(game.hasVisual(miObjeto)){
+			game.removeVisual(miObjeto)
+		}else{}
+	}	
 	
 	method perder(){
 		game.say(personaje, "mensaje sad de perdieron")
