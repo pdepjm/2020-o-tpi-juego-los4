@@ -120,7 +120,7 @@ class EstrellaMayor inherits ObjetosAEsquivar{
 	method velocidad()= 100
 	
 	override method efectoAlChocar(jugador){
-		jugador.colleccionarEstrella(self)
+		personaje.coleccionarEstrella(self)
 		
 	}
 }
@@ -130,6 +130,6 @@ class EstrellaMenor inherits ObjetosAEsquivar{
 	method velocidad()= 100
 	
 	override method efectoAlChocar(jugador){
-		jugador.colleccionarEstrella(self)	
+		personaje.coleccionarEstrella(self)	
 	}
 }
