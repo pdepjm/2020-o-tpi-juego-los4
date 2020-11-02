@@ -86,11 +86,13 @@ object nombreDelJuego {
 	}	
 	
 	method perder(){
+		personaje.moverPersonaje(game.at(5, 5))
 		game.say(personaje, "mensaje sad de perdieron")
 		self.terminar()
 	}
 	
 	method ganar(){
+		personaje.moverPersonaje(game.at(5, 2))
 		game.say(personaje, "mensaje fiesta de ganaron")
 		self.terminar()		
 	}
