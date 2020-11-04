@@ -18,7 +18,7 @@ class ObjetosAEsquivar{
 	}
 	
 	method moverse(nuevaPosicion) {
-			posicion = nuevaPosicion
+		posicion = nuevaPosicion
 	}
 
 	method chocarCon(jugador){
@@ -26,20 +26,9 @@ class ObjetosAEsquivar{
 		self.efectoAlChocar(jugador)
 	}
 	
-	method efectoAlChocar(jugador){}
+	method efectoAlChocar(jugador)
 	
-	method chocarPerseguidor(){}
-}
-
-object limites{
-	const property limiteX = 0 
-	const property limiteYSup = 14 
-	const property limiteYInf = 2
-	
-	method dentroDeLimites(objeto) = 
-		objeto.position().x() >= self.limiteX() && 
-		objeto.position().y() <= self.limiteYSup() &&
-		objeto.position().y() >= self.limiteYInf()
+	method chocarPerseguidor(){} //si pongo esto como método abstracto no me deja instanciar	 
 }
 
 class ObjetoGrande inherits ObjetosAEsquivar {	

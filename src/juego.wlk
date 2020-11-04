@@ -40,7 +40,7 @@ object nombreDelJuego {
 		game.onTick(miObjeto.velocidad(), "moverse", {miObjeto.moverse(miObjeto.position().left(1))})
 		game.onCollideDo(personaje, { visualColisionado => visualColisionado.chocarCon(personaje)})
 		game.onCollideDo(perseguidor, { visualColisionado => visualColisionado.chocarPerseguidor()}) 
-		game.schedule(miObjeto.velocidad()*(game.width()+2), {self.sigueEnPantalla(miObjeto)}) //esto es para que no haya lag	
+		game.schedule(miObjeto.velocidad()*(game.width()+5), {self.sigueEnPantalla(miObjeto)}) //esto es para que no haya lag	
 	}				
 	
 	method configurarTeclasPersonaje(){
@@ -71,7 +71,7 @@ object nombreDelJuego {
 		if(game.hasVisual(miObjeto)){
 			game.removeVisual(miObjeto)
 		}else{}
-	}	
+	}
 	
 //En los métodos perder y ganar quisieramos mostrar el puntaje alcanzado hasta entonces
 // y también estaría bueno de hacer un reportaje de la cantidad de choques con objetos medianos y chicos (como para mostrar el desempeño del juagdor)
