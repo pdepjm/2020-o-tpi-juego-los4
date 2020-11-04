@@ -91,15 +91,26 @@ object nombreDelJuego {
 		}else{}
 	}	
 	
+//En los métodos perder y ganar quisieramos mostrar el puntaje alcanzado hasta entonces
+// y también estaría bueno de hacer un reportaje de la cantidad de choques con objetos medianos y chicos (como para mostrar el desempeño del juagdor)
+
 	method perder(){
 		personaje.moverPersonaje(game.at(5, 5))
-		game.say(personaje, "mensaje sad de perdieron")
 		self.terminar()
+	}
+	
+	method perderAplastado(){
+		game.say(personaje, "¡FUISTE APLASTADO")
+		self.perder()
+	}
+	method perderAtrapado(){
+		game.say(personaje, "¡FUISTE ATRAPADO")
+		self.perder()
 	}
 	
 	method ganar(){
 		personaje.moverPersonaje(game.at(5, 2))
-		game.say(personaje, "mensaje fiesta de ganaron")
+		game.say(personaje, "¡FELICITACIONES, HAS ESCAPADO CON ÉXITO!") 
 		self.terminar()		
 	}
 	

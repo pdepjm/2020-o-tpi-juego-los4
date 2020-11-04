@@ -28,7 +28,7 @@ object personaje{ // podríamos poner un nombre más representativo como jugador
 	
 	method coleccionarEstrella(unaEstrella){
 		estrellas.add(unaEstrella)
-		if(self.puntaje() >= 200){/**el 200 es momentaneo */
+		if(self.puntaje() >= 200){
 			nombreDelJuego.ganar()
 		}else {
 			
@@ -37,7 +37,7 @@ object personaje{ // podríamos poner un nombre más representativo como jugador
 	method puntaje() = estrellas.sum({estrella => estrella.valor()})
 	
 	method chocarPerseguidor(){
-		nombreDelJuego.perder()
+		nombreDelJuego.perderAtrapado()
 	}
 }
 
