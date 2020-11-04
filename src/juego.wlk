@@ -31,7 +31,7 @@ object nombreDelJuego {
 		game.onTick(9000.randomUpTo(10000), "aparecer estrella", {self.mover(new EstrellaMenor())})
 	}
 	
-	method iniciarNivel(nivel){
+	/*method iniciarNivel(nivel){
 		if (nivel.nombreNivel() == "street"){
 			game.onTick(3500.randomUpTo(4500), "aparecer objeto grande", {self.mover(new ObjetoGrande())})	
 			game.onTick(2000.randomUpTo(3500), "aparecer objeto mediano", {self.mover(new ObjetoMediano())})
@@ -45,7 +45,13 @@ object nombreDelJuego {
 			game.onTick(20000.randomUpTo(5000), "aparecer portal espacio", {self.mover(new PortalEspacio())})
 			keyboard.space().onPressDo({self.probarDisparo(new Disparo())})
 		}
-	} 
+	} */
+	
+	//Agrego el metodo iniciar a ambos niveles para evitar el if
+	
+	method iniciarNivel(nivel){
+		nivel.iniciar()
+	}
 	
 	method mover(miObjeto){
 		miObjeto.aparecer()

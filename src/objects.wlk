@@ -116,7 +116,7 @@ class ObjetoChicoEspacio inherits ObjetoChico{
 //También podemos ver lo mismo acá en estrella para evitar repetir el coleccionar estrella
 class EstrellaMayor inherits ObjetosAEsquivar{
 	method image() = "estrella_amarilla.png"
-	method valor() = 100
+	method valor() = 20
 	method velocidad()= 100
 	
 	override method efectoAlChocar(jugador){
@@ -126,7 +126,7 @@ class EstrellaMayor inherits ObjetosAEsquivar{
 }
 class EstrellaMenor inherits ObjetosAEsquivar{
 	method image() = "strellaAzul.png"
-	method valor()= 50
+	method valor()= 10
 	method velocidad()= 100
 	
 	override method efectoAlChocar(jugador){

@@ -2,6 +2,7 @@ import wollok.game.*
 import jugador.*
 import objects.*
 import juego.*
+import disparo.*
 
 class Portal inherits ObjetosAEsquivar{
 	method velocidad() = 200
@@ -49,17 +50,29 @@ object fondoEspacio{
 }
 
 object calle{
-	const property nombreNivel = "street"
+	//const property nombreNivel = "street"
 	const property imagenJugador = "autoPersonaje.png"
 	const property imagenPerseguidor = "autoPolicia.png" 
 	const property imagenFondo = " " 
+	method iniciar(){	
+		game.onTick(3500.randomUpTo(4500), "aparecer objeto grande", {nombreDelJuego.mover(new ObjetoGrande())})	
+		game.onTick(2000.randomUpTo(3500), "aparecer objeto mediano", {nombreDelJuego.mover(new ObjetoMediano())})
+		game.onTick(1000.randomUpTo(1500), "aparecer objeto chico", {nombreDelJuego.mover(new ObjetoChico())})
+		game.onTick(20000.randomUpTo(5000), "aparecer portal espacio", {nombreDelJuego.mover(new Portal())})}
 }
 
 object espacio{
-	const property nombreNivel = "space"
+	//const property nombreNivel = "space"
 	const property imagenJugador = "navePersonaje.png"
 	const property imagenPerseguidor = "navePerseguidor.png"
 	const property imagenFondo = "space.jpg" 
+	method iniciar(){
+		game.onTick(3500.randomUpTo(4500), "aparecer objeto grande espacio", {nombreDelJuego.mover(new ObjetoGrandeEspacio())})	
+		game.onTick(2000.randomUpTo(3500), "aparecer objeto mediano espacio", {nombreDelJuego.mover(new ObjetoMedianoEspacio())})
+		game.onTick(1000.randomUpTo(1500), "aparecer objeto chico espacio", {nombreDelJuego.mover(new ObjetoChicoEspacio())})
+		game.onTick(20000.randomUpTo(5000), "aparecer portal espacio", {nombreDelJuego.mover(new PortalEspacio())})
+		keyboard.space().onPressDo({nombreDelJuego.probarDisparo(new Disparo())})
+	}
 }
 
 
