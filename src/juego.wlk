@@ -27,28 +27,10 @@ object nombreDelJuego {
 		game.addVisual(personaje)
 		game.addVisual(perseguidor)
 		game.showAttributes(personaje) 
-		game.onTick(15000.randomUpTo(15000), "aparecer estrella", {self.mover(new EstrellaMayor())})
-		game.onTick(9000.randomUpTo(10000), "aparecer estrella", {self.mover(new EstrellaMenor())})
+		game.onTick(15000.randomUpTo(15000), "aparecer estrella", {self.mover(new EstrellaMayor(imagen = "estrella_amarilla.png"))})
+		game.onTick(9000.randomUpTo(10000), "aparecer estrella", {self.mover(new EstrellaMenor(imagen = "strellaAzul.png"))})
 	}
-	
-	/*method iniciarNivel(nivel){
-		if (nivel.nombreNivel() == "street"){
-			game.onTick(3500.randomUpTo(4500), "aparecer objeto grande", {self.mover(new ObjetoGrande())})	
-			game.onTick(2000.randomUpTo(3500), "aparecer objeto mediano", {self.mover(new ObjetoMediano())})
-			game.onTick(1000.randomUpTo(1500), "aparecer objeto chico", {self.mover(new ObjetoChico())})
-			game.onTick(20000.randomUpTo(5000), "aparecer portal espacio", {self.mover(new Portal())})
-		}
-		else if(nivel.nombreNivel() == "space") {      
-			game.onTick(3500.randomUpTo(4500), "aparecer objeto grande espacio", {self.mover(new ObjetoGrandeEspacio())})	
-			game.onTick(2000.randomUpTo(3500), "aparecer objeto mediano espacio", {self.mover(new ObjetoMedianoEspacio())})
-			game.onTick(1000.randomUpTo(1500), "aparecer objeto chico espacio", {self.mover(new ObjetoChicoEspacio())})
-			game.onTick(20000.randomUpTo(5000), "aparecer portal espacio", {self.mover(new PortalEspacio())})
-			keyboard.space().onPressDo({self.probarDisparo(new Disparo())})
-		}
-	} */
-	
-	//Agrego el metodo iniciar a ambos niveles para evitar el if
-	
+
 	method iniciarNivel(nivel){
 		nivel.iniciar()
 	}
@@ -118,4 +100,5 @@ object nombreDelJuego {
 		game.schedule(5*1000, {game.stop()})
 	}
 }
+
 

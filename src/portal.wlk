@@ -6,8 +6,6 @@ import disparo.*
 
 class Portal inherits ObjetosAEsquivar{
 	method velocidad() = 200
-
-	method image() = "portal.png"
 	
 	override method efectoAlChocar(jugador){
 		game.clear()
@@ -18,8 +16,6 @@ class Portal inherits ObjetosAEsquivar{
 }
 
 class PortalEspacio inherits Portal{
-	override method image() = "portalEspacio.png"
-	
 	override method efectoAlChocar(jugador){
 		game.clear()
 		cambioDeNivel.configurarNivel(calle)
@@ -56,12 +52,13 @@ object calle{
 	const property objGrande = "camionBasura.png" 
 	const property objMediano = "autoPObjMediano.png" 
 	const property objChico = "cono.png" 
+	const property imagenPortal = "portal.png"
 
 	method iniciar(){	
-		game.onTick(3500.randomUpTo(4500), "aparecer objeto grande", {nombreDelJuego.mover(new ObjetoGrande())})	
-		game.onTick(2000.randomUpTo(3500), "aparecer objeto mediano", {nombreDelJuego.mover(new ObjetoMediano())})
-		game.onTick(1000.randomUpTo(1500), "aparecer objeto chico", {nombreDelJuego.mover(new ObjetoChico())})
-		game.onTick(20000.randomUpTo(5000), "aparecer portal espacio", {nombreDelJuego.mover(new Portal())})}
+		game.onTick(3500.randomUpTo(4500), "aparecer objeto grande", {nombreDelJuego.mover(new ObjetoGrande(imagen = self.objGrande()))})	
+		game.onTick(2000.randomUpTo(3500), "aparecer objeto mediano", {nombreDelJuego.mover(new ObjetoMediano(imagen = self.objMediano()))})
+		game.onTick(1000.randomUpTo(1500), "aparecer objeto chico", {nombreDelJuego.mover(new ObjetoChico(imagen = self.objChico()))})
+		game.onTick(20000.randomUpTo(5000), "aparecer portal espacio", {nombreDelJuego.mover(new Portal(imagen = self.imagenPortal()))})}
 }
 
 object espacio{
@@ -71,12 +68,13 @@ object espacio{
 	const property objGrande = "bigSpaceObject.png" 
 	const property objMediano = "mediumSpaceObject.png" 
 	const property objChico = "smallSpaceObject.png" 
+	const property imagenPortal = "portalEspacio.png"
 	
 	method iniciar(){
-		game.onTick(3500.randomUpTo(4500), "aparecer objeto grande espacio", {nombreDelJuego.mover(new ObjetoGrandeEspacio())})	
-		game.onTick(2000.randomUpTo(3500), "aparecer objeto mediano espacio", {nombreDelJuego.mover(new ObjetoMedianoEspacio())})
-		game.onTick(1000.randomUpTo(1500), "aparecer objeto chico espacio", {nombreDelJuego.mover(new ObjetoChicoEspacio())})
-		game.onTick(20000.randomUpTo(5000), "aparecer portal espacio", {nombreDelJuego.mover(new PortalEspacio())})
+		game.onTick(3500.randomUpTo(4500), "aparecer objeto grande espacio", {nombreDelJuego.mover(new ObjetoGrande(imagen = self.objGrande()))})	
+		game.onTick(2000.randomUpTo(3500), "aparecer objeto mediano espacio", {nombreDelJuego.mover(new ObjetoMediano(imagen = self.objMediano()))})
+		game.onTick(1000.randomUpTo(1500), "aparecer objeto chico espacio", {nombreDelJuego.mover(new ObjetoChico(imagen = self.objChico()))})
+		game.onTick(20000.randomUpTo(5000), "aparecer portal espacio", {nombreDelJuego.mover(new PortalEspacio(imagen = self.imagenPortal()))})
 		keyboard.space().onPressDo({nombreDelJuego.probarDisparo(new Disparo())})
 	}
 }

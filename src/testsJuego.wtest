@@ -17,7 +17,7 @@ describe "posicionamiento inicial de personaje y perseguidor" {
 
 describe "Estrellas"{
 	test "Agregar estrella si todavía no alcanzo el puntaje necesario para ganar"{
-	const estrellitaTest = new EstrellaMenor()
+	const estrellitaTest = new EstrellaMenor(imagen = "strellaAzul.png")
 	personaje.coleccionarEstrella(estrellitaTest)
 	assert.equals(10, personaje.puntaje())
 	}
@@ -26,8 +26,8 @@ describe "Estrellas"{
 
 describe "Cambio de imagenes"{
 	
-	const portalAEspacio = new Portal()
-	const portalACiudad = new PortalEspacio()
+	const portalAEspacio = new Portal(imagen = espacio.imagenPortal())
+	const portalACiudad = new PortalEspacio(imagen = calle.imagenPortal())
 	
 	
 	test "Al pasar al espacio, el jugador pasa de ser autoPersonaje a ser navePersonaje"{
@@ -61,26 +61,26 @@ describe "Cambio de imagenes"{
   describe "Movimientos del personaje al chocar con los obstáculos"{
 	
 	test "El personaje se mueve una posicion al chocar con un objeto pequeño"{
-		const objetoChico = new ObjetoChico()
+		const objetoChico = new ObjetoChico(imagen = calle.objChico())
 		game.addVisual(objetoChico)
 		objetoChico.chocarCon(personaje)
 		assert.equals(personaje.position().x(), 4)
 	}
 	
 	test "El personaje no debería moverse ni más ni menos de 1 posición"{
-		const objetoChico = new ObjetoChico()
+		const objetoChico = new ObjetoChico(imagen = calle.objChico())
 		game.addVisual(objetoChico)
 		objetoChico.chocarCon(personaje)
 		assert.notThat(personaje.position().x() == 3)
 	}
 	test "El personaje se mueve 2 posiciones al chocar con un objeto mediano"{
-		const objetoMediano = new ObjetoMediano()
+		const objetoMediano = new ObjetoMediano(imagen = calle.objMediano())
 		game.addVisual(objetoMediano)
 		objetoMediano.chocarCon(personaje)
 		assert.equals(personaje.position().x(), 3)
 	}
 		test "El personaje no debería moverse ni más ni menos de 2 posiciones"{
-		const objetoMediano = new ObjetoMediano()
+		const objetoMediano = new ObjetoMediano(imagen = calle.objMediano())
 		game.addVisual(objetoMediano)
 		objetoMediano.chocarCon(personaje)
 		assert.notThat(personaje.position().x() == 5)
