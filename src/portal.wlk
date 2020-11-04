@@ -50,10 +50,13 @@ object fondoEspacio{
 }
 
 object calle{
-	//const property nombreNivel = "street"
 	const property imagenJugador = "autoPersonaje.png"
 	const property imagenPerseguidor = "autoPolicia.png" 
 	const property imagenFondo = " " 
+	const property objGrande = "camionBasura.png" 
+	const property objMediano = "autoPObjMediano.png" 
+	const property objChico = "cono.png" 
+
 	method iniciar(){	
 		game.onTick(3500.randomUpTo(4500), "aparecer objeto grande", {nombreDelJuego.mover(new ObjetoGrande())})	
 		game.onTick(2000.randomUpTo(3500), "aparecer objeto mediano", {nombreDelJuego.mover(new ObjetoMediano())})
@@ -62,10 +65,13 @@ object calle{
 }
 
 object espacio{
-	//const property nombreNivel = "space"
 	const property imagenJugador = "navePersonaje.png"
 	const property imagenPerseguidor = "navePerseguidor.png"
 	const property imagenFondo = "space.jpg" 
+	const property objGrande = "bigSpaceObject.png" 
+	const property objMediano = "mediumSpaceObject.png" 
+	const property objChico = "smallSpaceObject.png" 
+	
 	method iniciar(){
 		game.onTick(3500.randomUpTo(4500), "aparecer objeto grande espacio", {nombreDelJuego.mover(new ObjetoGrandeEspacio())})	
 		game.onTick(2000.randomUpTo(3500), "aparecer objeto mediano espacio", {nombreDelJuego.mover(new ObjetoMedianoEspacio())})

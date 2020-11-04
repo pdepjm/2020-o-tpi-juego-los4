@@ -70,8 +70,6 @@ class ObjetoChico inherits ObjetosQueEmpujan{
 
 
 class ObjetoGrande inherits ObjetosAEsquivar {	
-	method image() = "camionBasura.png" //Podría ir cambiando al azar, muy monotomo. 
-		
 	method velocidad() = 300
 	
 	override method efectoAlChocar(jugador){
@@ -80,9 +78,7 @@ class ObjetoGrande inherits ObjetosAEsquivar {
 	
 }
 
-class ObjetoMediano inherits ObjetosAEsquivar{		
-	method image() = "autoPObjMediano.png" //Podría ir cambiando al azar, muy monotomo. 
-
+class ObjetoMediano inherits ObjetosAEsquivar{	
 	method velocidad() = 250
 	
 	override method efectoAlChocar(jugador){
@@ -91,27 +87,12 @@ class ObjetoMediano inherits ObjetosAEsquivar{
 }
 
 class ObjetoChico inherits ObjetosAEsquivar{
-	method image() = "cono.png"  //Podría ir cambiando al azar, muy monotomo. 
-	
 	method velocidad() = 200
 	
 	override method efectoAlChocar(jugador){	
 		personaje.moverPersonaje(personaje.position().left(1))
 	}
 }
-
-class ObjetoGrandeEspacio inherits ObjetoGrande{
-	override method image() = "bigSpaceObject.png" 
-}
-
-class ObjetoMedianoEspacio inherits ObjetoMediano{
-	override method image() = "mediumSpaceObject.png" 
-}
-
-class ObjetoChicoEspacio inherits ObjetoChico{
-	override method image() = "smallSpaceObject.png" 
-}
-
 
 //También podemos ver lo mismo acá en estrella para evitar repetir el coleccionar estrella
 class EstrellaMayor inherits ObjetosAEsquivar{
@@ -124,6 +105,7 @@ class EstrellaMayor inherits ObjetosAEsquivar{
 		
 	}
 }
+
 class EstrellaMenor inherits ObjetosAEsquivar{
 	method image() = "strellaAzul.png"
 	method valor()= 10
