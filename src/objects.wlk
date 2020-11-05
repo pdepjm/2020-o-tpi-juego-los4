@@ -56,21 +56,26 @@ class ObjetoChico inherits ObjetosAEsquivar{
 }
 
 //También podemos ver lo mismo acá en estrella para evitar repetir el coleccionar estrella
-class EstrellaMayor inherits ObjetosAEsquivar{
-	method valor() = 20
+class Estrella inherits ObjetosAEsquivar{
+	var modo = modoMayor
+	method modo()= modo
 	method velocidad()= 100
 	
 	override method efectoAlChocar(jugador){
 		personaje.coleccionarEstrella(self)
+		modo = modoMenor
 		
 	}
 }
 
-class EstrellaMenor inherits ObjetosAEsquivar{
-	method valor()= 10
-	method velocidad()= 100
-	
-	override method efectoAlChocar(jugador){
-		personaje.coleccionarEstrella(self)	
-	}
+object modoMayor{
+	method enviarMensaje()= "SUPER STAR + 20"
+	method valor()= 20
 }
+object modoMenor{
+	method enviarMensaje()= "STAR + 10"
+	method valor()= 10
+	
+}
+
+

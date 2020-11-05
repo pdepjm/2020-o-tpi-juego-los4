@@ -28,6 +28,7 @@ object personaje{ // podríamos poner un nombre más representativo como jugador
 	
 	method coleccionarEstrella(unaEstrella){
 		estrellas.add(unaEstrella)
+		unaEstrella.modo().enviarMensaje()
 		if(self.puntaje() >= 200){
 			nombreDelJuego.ganar()
 		}else {
@@ -35,7 +36,7 @@ object personaje{ // podríamos poner un nombre más representativo como jugador
 		}
 	}
 	
-	method puntaje() = estrellas.sum({estrella => estrella.valor()})
+	method puntaje() = estrellas.sum({estrella => estrella.modo().valor()})
 	
 	method chocarPerseguidor(){
 		nombreDelJuego.perderAtrapado()
