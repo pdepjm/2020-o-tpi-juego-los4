@@ -17,7 +17,7 @@ describe "posicionamiento inicial de personaje y perseguidor" {
 
 describe "Estrellas"{
 	test "Agregar estrella si todavía no alcanzo el puntaje necesario para ganar"{
-	const estrellitaTest = new EstrellaMenor(imagen = "strellaAzul.png")
+	const estrellitaTest = new Estrella(modo = modoMenor, imagen = "strellaAzul.png")
 	personaje.coleccionarEstrella(estrellitaTest)
 	assert.equals(10, personaje.puntaje())
 	}
