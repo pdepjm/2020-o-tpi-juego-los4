@@ -35,7 +35,7 @@ class ObjetoGrande inherits ObjetosAEsquivar {
 	method velocidad() = 300
 	
 	override method efectoAlChocar(jugador){
-		nombreDelJuego.perder()	
+		escape.perder()	
 	}	
 }
 
@@ -64,7 +64,6 @@ class Estrella inherits ObjetosAEsquivar{
 	override method efectoAlChocar(jugador){
 		personaje.coleccionarEstrella(self)
 		modo = modoMenor
-		
 	}
 }
 

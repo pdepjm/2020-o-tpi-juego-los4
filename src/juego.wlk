@@ -4,7 +4,7 @@ import objects.*
 import portal.*
 import disparo.*
 
-object nombreDelJuego {
+object escape{
 				
 	method iniciar() {
 		self.configurarJuego()
@@ -16,7 +16,7 @@ object nombreDelJuego {
 	}
 	
 	method configurarJuego() {
-		game.title("NOMBRE PENDIENTE")
+		game.title("ESCAPE")
 		game.width(15)
 		game.height(17)
 		game.boardGround("carretera2.png") // Cuantos carriles? Cual va a ser el límite? 
@@ -27,8 +27,8 @@ object nombreDelJuego {
 		game.addVisual(personaje)
 		game.addVisual(perseguidor)
 		game.showAttributes(personaje) 
-		game.onTick(15000.randomUpTo(15000), "aparecer estrella", {self.mover(new EstrellaMayor(imagen = "estrella_amarilla.png"))})
-		game.onTick(9000.randomUpTo(10000), "aparecer estrella", {self.mover(new EstrellaMenor(imagen = "strellaAzul.png"))})
+		game.onTick(15000.randomUpTo(15000), "aparecer estrella", {self.mover(new Estrella(modo = modoMayor, imagen = "estrella_amarilla.png"))})
+		game.onTick(9000.randomUpTo(10000), "aparecer estrella", {self.mover(new Estrella(modo = modoMenor, imagen = "strellaAzul.png"))})
 	}
 
 	method iniciarNivel(nivel){
@@ -82,11 +82,11 @@ object nombreDelJuego {
 	}
 	
 	method perderAplastado(){
-		game.say(personaje, "¡FUISTE APLASTADO")
+		game.say(personaje, "¡FUISTE APLASTADO!")
 		self.perder()
 	}
 	method perderAtrapado(){
-		game.say(personaje, "¡FUISTE ATRAPADO")
+		game.say(personaje, "¡FUISTE ATRAPADO!")
 		self.perder()
 	}
 	

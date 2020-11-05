@@ -1,6 +1,6 @@
 import juego.*
 
 program game {
-	nombreDelJuego.iniciar()
+	escape.iniciar()
 }
 
