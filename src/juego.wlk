@@ -11,7 +11,6 @@ object escape{
 		self.aparecerObjetos()
 		self.mostrarTutorial()
 		self.sacarTutorialEIniciar()
-		//self.iniciarNivel(calle)
 		game.start()
 	}			
 	
