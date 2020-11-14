@@ -4,7 +4,7 @@ import portal.*
 import juego.*
 
 object personaje{ // podríamos poner un nombre más representativo como jugador(? protagonista(?
-	var posicion = game.at(5, 2) 
+	var posicion = game.at(5, 5) 
 	var imagen = calle.imagenJugador()
 	const estrellas = []
 	
@@ -66,5 +66,11 @@ object limites{
 		objeto.position().x() >= self.limiteX() && 
 		objeto.position().y() <= self.limiteYSup() &&
 		objeto.position().y() >= self.limiteYInf()
+}
+
+object tutorial{
+	method image() = "tutorial.png"
+	
+	method position() = game.at(0,0)
 }
 

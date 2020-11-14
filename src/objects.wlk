@@ -4,7 +4,7 @@ import juego.*
 
 class ObjetosAEsquivar{	
 	var posicion = game.at(20, 10)
-	const imagen 
+	var imagen 
 	
 	method position() = posicion
 	
@@ -24,6 +24,10 @@ class ObjetosAEsquivar{
 	method chocarCon(jugador){
 		game.removeVisual(self)
 		self.efectoAlChocar(jugador)
+	}
+	
+	method recibirDisparo(){
+		game.removeVisual(self)
 	}
 	
 	method efectoAlChocar(jugador)
@@ -63,7 +67,11 @@ class Estrella inherits ObjetosAEsquivar{
 	
 	override method efectoAlChocar(jugador){
 		personaje.coleccionarEstrella(self)
+	}
+	
+	override method recibirDisparo(){
 		modo = modoMenor
+		imagen = "strellaAzul.png"
 	}
 }
 

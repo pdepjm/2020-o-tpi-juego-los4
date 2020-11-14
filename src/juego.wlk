@@ -6,13 +6,28 @@ import disparo.*
 
 object escape{
 				
-	method iniciar() {
+	method iniciar(){
 		self.configurarJuego()
 		self.aparecerObjetos()
+		self.mostrarTutorial()
+		self.sacarTutorialEIniciar()
+		//self.iniciarNivel(calle)
+		game.start()
+	}			
+	
+	method mostrarTutorial(){
+		game.addVisual(tutorial)
+	}
+	
+	method sacarTutorialEIniciar(){
+		keyboard.enter().onPressDo({self.sacarTutorial()})
+	}
+	
+	method sacarTutorial(){
+		game.removeVisual(tutorial)
 		self.iniciarNivel(calle)
 		self.configurarTeclasPersonaje()
 		self.configurarColisiones()
-		game.start()
 	}
 	
 	method configurarJuego() {
@@ -27,8 +42,8 @@ object escape{
 		game.addVisual(personaje)
 		game.addVisual(perseguidor)
 		game.showAttributes(personaje) 
-		game.onTick(15000.randomUpTo(15000), "aparecer estrella", {self.mover(new Estrella(modo = modoMayor, imagen = "estrella_amarilla.png"))})
-		game.onTick(9000.randomUpTo(10000), "aparecer estrella", {self.mover(new Estrella(modo = modoMenor, imagen = "strellaAzul.png"))})
+		game.onTick(9000.randomUpTo(7000), "aparecer estrella", {self.mover(new Estrella(modo = modoMayor, imagen = "estrella_amarilla.png"))})
+		game.onTick(3000.randomUpTo(3500), "aparecer estrella", {self.mover(new Estrella(modo = modoMenor, imagen = "strellaAzul.png"))})
 	}
 
 	method iniciarNivel(nivel){
@@ -46,6 +61,8 @@ object escape{
 	method configurarTeclasPersonaje(){
 		keyboard.up().onPressDo({ personaje.moverPersonaje(personaje.position().up(1))})
 		keyboard.down().onPressDo({ personaje.moverPersonaje(personaje.position().down(1))})
+		keyboard.w().onPressDo({ personaje.moverPersonaje(personaje.position().up(1))})
+		keyboard.s().onPressDo({ personaje.moverPersonaje(personaje.position().down(1))})
 	}
 	
 	method configurarColisiones(){
@@ -62,7 +79,7 @@ object escape{
 		disparado.aparecer()
 		arma.descargar()
 		game.onTick(disparado.velocidad(), "disparar", {disparado.moverse(disparado.position().right(1))})	
-		game.onCollideDo(disparado, { visualColisionado => game.removeVisual(visualColisionado)}) 
+		game.onCollideDo(disparado, { visualColisionado => visualColisionado.recibirDisparo()}) 
 		game.schedule(400, {game.removeVisual(disparado)})
 		game.onTick(2500,"recargar arma",{arma.recargar()})
 	}
