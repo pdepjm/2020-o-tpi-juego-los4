@@ -21,6 +21,9 @@ class Disparo {
 	}
 	
 	method chocarCon(jugador){}
+	method chocarConEstrella(estrella){
+		estrella.recibirDisparo()
+	}
 }
 
 object arma{

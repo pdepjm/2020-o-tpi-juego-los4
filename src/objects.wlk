@@ -63,7 +63,7 @@ class ObjetoChico inherits ObjetosAEsquivar{
 class Estrella inherits ObjetosAEsquivar{
 	var modo = modoMayor
 	method modo()= modo
-	method velocidad()= 100
+	method velocidad()= 200
 	
 	override method efectoAlChocar(jugador){
 		personaje.coleccionarEstrella(self)
@@ -71,15 +71,17 @@ class Estrella inherits ObjetosAEsquivar{
 	
 	override method recibirDisparo(){
 		modo = modoMenor
-		imagen = "strellaAzul.png"
+		//imagen = "strellaAzul.png"
 	}
 }
 
 object modoMayor{
+	method image()= "estrella_amarilla.png"
 	method enviarMensaje()= "SUPER STAR + 20"
 	method valor()= 20
 }
 object modoMenor{
+	method image()= "strellaAzul.png"
 	method enviarMensaje()= "STAR + 10"
 	method valor()= 10
 	
