@@ -71,17 +71,17 @@ class Estrella inherits ObjetosAEsquivar{
 	
 	override method recibirDisparo(){
 		modo = modoMenor
-		//imagen = "strellaAzul.png"
+		imagen = "strellaAzul.png"
 	}
 }
 
 object modoMayor{
-	method image()= "estrella_amarilla.png"
+	//method image()= "estrella_amarilla.png"
 	method enviarMensaje()= "SUPER STAR + 20"
 	method valor()= 20
 }
 object modoMenor{
-	method image()= "strellaAzul.png"
+	//method image()= "strellaAzul.png"
 	method enviarMensaje()= "STAR + 10"
 	method valor()= 10
 	

@@ -58,7 +58,7 @@ object calle{
 		game.onTick(3500.randomUpTo(4500), "aparecer objeto grande", {escape.mover(new ObjetoGrande(imagen = self.objGrande()))})	
 		game.onTick(2000.randomUpTo(3500), "aparecer objeto mediano", {escape.mover(new ObjetoMediano(imagen = self.objMediano()))})
 		game.onTick(2000.randomUpTo(1500), "aparecer objeto chico", {escape.mover(new ObjetoChico(imagen = self.objChico()))})
-		game.onTick(6000.randomUpTo(8000), "aparecer portal espacio", {escape.mover(new Portal(imagen = self.imagenPortal()))})}
+		game.onTick(5000.randomUpTo(7000), "aparecer portal espacio", {escape.mover(new Portal(imagen = self.imagenPortal()))})}
 }
 
 object espacio{
@@ -74,7 +74,7 @@ object espacio{
 		game.onTick(3500.randomUpTo(4500), "aparecer objeto grande espacio", {escape.mover(new ObjetoGrande(imagen = self.objGrande()))})	
 		game.onTick(2000.randomUpTo(3500), "aparecer objeto mediano espacio", {escape.mover(new ObjetoMediano(imagen = self.objMediano()))})
 		game.onTick(2000.randomUpTo(1500), "aparecer objeto chico espacio", {escape.mover(new ObjetoChico(imagen = self.objChico()))})
-		game.onTick(6000.randomUpTo(8000), "aparecer portal espacio", {escape.mover(new PortalEspacio(imagen = self.imagenPortal()))})
+		game.onTick(5000.randomUpTo(7000), "aparecer portal espacio", {escape.mover(new PortalEspacio(imagen = self.imagenPortal()))})
 		keyboard.space().onPressDo({escape.probarDisparo(new Disparo())})
 	}
 }
