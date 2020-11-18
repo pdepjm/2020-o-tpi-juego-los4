@@ -29,7 +29,7 @@ object personaje{ // podríamos poner un nombre más representativo como jugador
 	method coleccionarEstrella(unaEstrella){
 		estrellas.add(unaEstrella)
 		unaEstrella.modo().enviarMensaje()
-		if(self.puntaje() >= 200){
+		if(self.puntaje() >= 150){
 			escape.ganar() }
 			
 		else if(self.cantidadEstrellasGrandes() == 5) {escape.ganar()}
