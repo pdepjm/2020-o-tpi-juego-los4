@@ -8,7 +8,6 @@ object escape{
 				
 	method iniciar(){
 		self.configurarJuego()
-		self.aparecerObjetos()
 		self.mostrarTutorial()
 		self.sacarTutorialEIniciar()
 		game.start()
@@ -24,6 +23,7 @@ object escape{
 	
 	method sacarTutorial(){
 		game.removeVisual(tutorial)
+		self.aparecerObjetos()
 		self.iniciarNivel(calle)
 		self.configurarTeclasPersonaje()
 		self.configurarColisiones()
