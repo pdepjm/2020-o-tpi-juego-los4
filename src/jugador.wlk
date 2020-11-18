@@ -30,11 +30,19 @@ object personaje{ // podríamos poner un nombre más representativo como jugador
 		estrellas.add(unaEstrella)
 		unaEstrella.modo().enviarMensaje()
 		if(self.puntaje() >= 200){
-			escape.ganar()
-		}else {
+			escape.ganar() }
 			
-		}
-	}
+		else if(self.cantidadEstrellasGrandes() == 5) {escape.ganar()}
+		 
+		else if(self.cantidadEstrellasPequenias() == 8){escape.ganar()}
+		
+	 else{}
+	 }
+	
+	method estrellasGrandes()= estrellas.filter({unaEstrella => unaEstrella.modo()== modoMayor})
+	method estrellasPequenias()= estrellas.filter({unaEstrella => unaEstrella.modo()== modoMenor})
+	method cantidadEstrellasGrandes() = self.estrellasGrandes().size()
+	method cantidadEstrellasPequenias()= self.estrellasPequenias().size()
 	
 	method puntaje() = estrellas.sum({estrella => estrella.modo().valor()})
 	
